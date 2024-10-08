@@ -1,89 +1,30 @@
-- name: L'Humanité – Actualités
-  url: https://www.humanite.fr/
+- name: LinkedIn
+  url: https://www.linkedin.com/
   actions:
-    - name: Refuser d'être suivi
-      type: click
-      element: '#sd-cmp button'
-    - name: Consulter les titres
+    # Action 1 - Consulter le feed
+    - name: Consulter le feed
       type: scroll
-    - name: Choisir un article
+    #Action 2 - Commencer un post
+    - name: Commencer un post
       type: click
-      element: 'div:nth-child(1) > article > div > a'
+      element: ".share-box-feed-entry__top-bar button"
       pageChange: true
-      waitForSelector: .rich-text
-      # screenshot: article1.png
-    - name: Lire l'article
-      type: scroll
-    - name: Revenir aux titres
+      #waitForSelector: .rich-text
+    #Action 3 - Aimer une publication
+    - name: aimer une publication
       type: click
-      element: >
-        .header-component__right-container > a[aria-label="Page d'accueil"]
-      pageChange: true
-    - name: Consulter les titres
-      type: scroll
-    - name: Choisir un autre article
+    #Action 4 - Revenir à la page d'accueil
+    - name: Revenir à la page d'accueil
       type: click
-      element: 'div:nth-child(2) > article > div > a'
+      element: 'button[aria-label="Réagir avec “J’aime”"]'
+      pageChange: false
+    #Action 5 - Consulter des recommendations d'offres
+    - name: Consulter des recommandations d'offres
+      type: scroll
+    #Action 6 - Consulter une offre
+    - name: Consulter une offre
+      type: click
+      element: ".job-card-container"
       pageChange: true
       waitForSelector: .rich-text
       # screenshot: article2.png
-    - name: Lire l'article
-      type: scroll
-
-- name: La Croix – Actualités
-  url: https://www.la-croix.com/
-  actions:
-    - name: Consulter les titres
-      type: scroll
-    - name: Choisir un article
-      type: click
-      element: 'article>a'
-      pageChange: true
-      waitForSelector: .article-content
-      # screenshot: article1.png
-    - name: Lire l'article
-      type: scroll
-    - name: Revenir aux titres
-      type: click
-      element: 'text/Actualité'
-      pageChange: true
-    - name: Consulter les titres
-      type: scroll
-    - name: Choisir un autre article
-      type: click
-      element: 'article:nth-of-type(2)>a'
-      pageChange: true
-      waitForSelector: .article-content
-      # screenshot: article2.png
-    - name: Lire l'article
-      type: scroll
-
-- name: Reporterre – Actualités
-  url: https://reporterre.net/
-  actions:
-    - name: Consulter les titres
-      type: scroll
-    - name: Choisir un article
-      type: click
-      element: '.article_12:nth-of-type(1)'
-      pageChange: true
-      waitForSelector: .texte
-    - name: Lire l'article
-      type: scroll
-    - name: Revenir aux titres
-      type: click
-      element: >
-        a[title="Vers la page d'accueil"]
-      pageChange: true
-    - name: Consulter les titres
-      type: scroll
-    - name: Choisir un autre article
-      type: click
-      element: '.article_12:nth-of-type(2)'
-      pageChange: true
-      waitForSelector: .texte
-    - name: Lire l'article
-      type: scroll
-
-#TODO: Libération & Le Figaro
-
