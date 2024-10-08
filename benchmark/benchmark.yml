@@ -1,0 +1,89 @@
+- name: L'Humanité – Actualités
+  url: https://www.humanite.fr/
+  actions:
+    - name: Refuser d'être suivi
+      type: click
+      element: '#sd-cmp button'
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un article
+      type: click
+      element: 'div:nth-child(1) > article > div > a'
+      pageChange: true
+      waitForSelector: .rich-text
+      # screenshot: article1.png
+    - name: Lire l'article
+      type: scroll
+    - name: Revenir aux titres
+      type: click
+      element: >
+        .header-component__right-container > a[aria-label="Page d'accueil"]
+      pageChange: true
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un autre article
+      type: click
+      element: 'div:nth-child(2) > article > div > a'
+      pageChange: true
+      waitForSelector: .rich-text
+      # screenshot: article2.png
+    - name: Lire l'article
+      type: scroll
+
+- name: La Croix – Actualités
+  url: https://www.la-croix.com/
+  actions:
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un article
+      type: click
+      element: 'article>a'
+      pageChange: true
+      waitForSelector: .article-content
+      # screenshot: article1.png
+    - name: Lire l'article
+      type: scroll
+    - name: Revenir aux titres
+      type: click
+      element: 'text/Actualité'
+      pageChange: true
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un autre article
+      type: click
+      element: 'article:nth-of-type(2)>a'
+      pageChange: true
+      waitForSelector: .article-content
+      # screenshot: article2.png
+    - name: Lire l'article
+      type: scroll
+
+- name: Reporterre – Actualités
+  url: https://reporterre.net/
+  actions:
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un article
+      type: click
+      element: '.article_12:nth-of-type(1)'
+      pageChange: true
+      waitForSelector: .texte
+    - name: Lire l'article
+      type: scroll
+    - name: Revenir aux titres
+      type: click
+      element: >
+        a[title="Vers la page d'accueil"]
+      pageChange: true
+    - name: Consulter les titres
+      type: scroll
+    - name: Choisir un autre article
+      type: click
+      element: '.article_12:nth-of-type(2)'
+      pageChange: true
+      waitForSelector: .texte
+    - name: Lire l'article
+      type: scroll
+
+#TODO: Libération & Le Figaro
+
