@@ -40,5 +40,5 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 - Indeed.
 
 Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
-
-
+- [LinkedIn](https://docs.google.com/document/d/1M_hvvl-gtFHfNVF80B0fRcRH33RDdKmU/edit?usp=sharing&ouid=118044924013965449288&rtpof=true&sd=true)
+- [Jobteaser](https://docs.google.com/document/d/1H5r5QVwXMFdAjjbahx9OFgktMH0bifSX/edit?usp=sharing&ouid=118044924013965449288&rtpof=true&sd=true)
