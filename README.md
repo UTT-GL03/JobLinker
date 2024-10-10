@@ -12,3 +12,33 @@ Dans un contexte professionnel en constante évolution, de nombreuses entreprise
 ## L'impact de sa numérisation
 Malgré la forte utilité professionnelle des applications comme LinkedIn, il faut reconnaître qu’elles ont un impact écologique beaucoup plus important que la publication de petites annonces. En effet, ces applications proposent aujourd’hui une quantité très importante de fonctionnalités qui ne sont pas toujours indispensables. Si l’on reprend l’exemple de LinkedIn, on retrouve au sein de cette application une messagerie instantanée, une partie « vidéos » qui ressemblent fortement à des "TikTok" en lien avec le milieu professionnel, une quantité très importante de notifications, etc. C’est pourquoi nous vous proposons de concevoir une version plus écologique de LinkedIn, qui se contente de proposer les fonctionnalités les plus profitables pour les utilisateurs, à savoir la publication d'offres d'emploi, la mise en avant des compétences des candidats et la possibilité d'accéder aux coordonnées d'un recruteur et/ou d'un candidat.
 
+## Scénarios d'usage et impacts
+Nous faisons l'hypothèse que les utilisateurs visitent ces plateformes plusieurs fois par jour, par exemple pendant une pause déjeuner ou le soir, afin de découvroir les nouvelles opportunités d'emploie et de consulter celles qui nous intéressent. Ces visites peuvent durer quelques dizaines de minutes. 
+Pour cette ranison, ous avons choisi de modéliser les scénarios suivants : l'un focalisé sur la recherche d'offres récentes, et l'autre sur l'exploration des offres qui nous intéressent.
+
+## Scénario 1 : "Recherche d'offres récentes"
+1.	L'utilisateur se connecte à LinkedIn ou JobTeaser.
+2.	Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".
+3.	Il sélectionne des mots clés, et la zone géographique qui l'intéresse.
+4.	Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.
+
+## Scénario 2 : "Exploration des offres intéressantes"
+1.	L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.
+2.	Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.
+3.	Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse. 
+4.	Il consulte les détails de l'offre.
+5.	Il revient à la liste des recommandations pour poursuivre l'exploration.
+
+ ## Impact de l'exécution des scénarios auprès de différents services concurrents 
+L'EcoIndex d'une page (de A à G) est calculé (sources : EcoIndex, Octo, GreenIT) en fonction du positionnement de cette page parmi les pages mondiales concernant :
+- le nombre de requêtes lancées,
+- le poids des téléchargements,
+- le nombre d'éléments du document.
+
+Nous avons choisi de comparer l'impact des scénarios sur les services de quotidiens nationaux de diverses sensibilités politiques, économiques et environementales :
+- LinkedIn,
+- Indeed.
+
+Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
+
+
