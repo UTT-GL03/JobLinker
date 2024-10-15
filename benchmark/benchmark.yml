@@ -1,30 +1,7 @@
-- name: LinkedIn
-  url: https://www.linkedin.com/
+- name: Facebook
+  url: https://www.linkedin.com
   actions:
-    # Action 1 - Consulter le feed
-    - name: Consulter le feed
-      type: scroll
-    #Action 2 - Commencer un post
-    - name: Commencer un post
-      type: click
-      element: ".share-box-feed-entry__top-bar button"
-      pageChange: true
-      #waitForSelector: .rich-text
-    #Action 3 - Aimer une publication
-    - name: aimer une publication
-      type: click
-    #Action 4 - Revenir à la page d'accueil
-    - name: Revenir à la page d'accueil
-      type: click
-      element: 'button[aria-label="Réagir avec “J’aime”"]'
-      pageChange: false
-    #Action 5 - Consulter des recommendations d'offres
-    - name: Consulter des recommandations d'offres
-      type: scroll
-    #Action 6 - Consulter une offre
-    - name: Consulter une offre
-      type: click
-      element: ".job-card-container"
-      pageChange: true
-      waitForSelector: .rich-text
-      # screenshot: article2.png
+    
+
+
+
