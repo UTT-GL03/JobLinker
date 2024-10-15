@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+            integrity="sha384-GHL5aQs2BwQUg6AUEbqq6XFSN6lGo8DAT58V5NckuLm9Ibf0uR8i7T+GwodBqcET"
+            crossorigin="anonymous"
+        />
+
+        <style type="text/css">
+            .bi-info {
+                padding: 0.25rem 0.25rem;
+                font-size: 0.875rem;
+                line-height: 0.5;
+            }
+            .pageRow {
+                background-color: #f0f0f0;
+            }
+            .collapseRow {
+                background-color: #d8ffbf;
+            }
+            .hiddenRow {
+                padding: 0 !important;
+            }
+            .grade {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #f00;
+                font-size: 14px;
+                font-weight: 650;
+                line-height: 24px;
+            }
+
+            .grade.big-grade {
+                width: 42px;
+                height: 42px;
+                font-size: 28px;
+                line-height: 42px;
+            }
+
+            .grade.A {
+                background-color: #349a47;
+                color: #fff;
+            }
+
+            .grade.B {
+                background-color: #51b84b;
+                color: #fff;
+            }
+
+            .grade.C {
+                background-color: #cadb2a;
+                color: #fff;
+            }
+
+            .grade.D {
+                background-color: #f6eb15;
+            }
+
+            .grade.E {
+                background-color: #fecd06;
+            }
+
+            .grade.F {
+                background-color: #f99839;
+                color: #fff;
+            }
+
+            .grade.G {
+                background-color: #ed2124;
+                color: #fff;
+            }
+
+            .checkmark-success {
+                position: absolute;
+                transform: rotate(45deg);
+                height: 18px;
+                width: 10px;
+                border-bottom: 5px solid #78b13f;
+                border-right: 5px solid #78b13f;
+                margin-left: 20px;
+            }
+
+            .close-warning,
+            .close-error {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                padding-left: 20px;
+            }
+            .close-warning:before,
+            .close-warning:after,
+            .close-error:before,
+            .close-error:after {
+                position: absolute;
+                content: ' ';
+                height: 22px;
+                width: 4px;
+            }
+            .close-warning:before,
+            .close-error:before {
+                transform: rotate(45deg);
+            }
+            .close-warning:after,
+            .close-error:after {
+                transform: rotate(-45deg);
+            }
+
+            .close-warning:before,
+            .close-warning:after {
+                background-color: orange;
+            }
+
+            .close-error:before,
+            .close-error:after {
+                background-color: red;
+            }
+        </style>
+
+        <title>GreenIT-Analysis report</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-success bg-success text-white mb-4">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1" style="font-size: 1rem">Rapport GreenIT-Analysis > <a class="text-white" href="https://www.linkedin.com">Facebook</a></span>
+                <div class="d-flex flex-row-reverse">
+                    <div id="date">08&#x2F;10&#x2F;2024 17:27:29</div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="container my-5">
+                <div class="row text-center">
+                    <div class="col col-md-4">
+                        <div class="card mb-4 border-success" style="max-width: 18rem">
+                            <div class="card-header bg-success text-white">Requêtes</div>
+                            <div class="card-body text-dark">
+                                <h1 id="nbRequest" class="card-title">0</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                        <div class="card mb-4 border-success" style="max-width: 18rem">
+                            <div class="card-header bg-success text-white">Taille de la page (Ko)</div>
+                            <div class="card-body text-dark">
+                                <h1 id="pageSize" class="card-title"></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                        <div class="card mb-4 border-success" style="max-width: 18rem">
+                            <div class="card-header bg-success text-white">Taille du DOM</div>
+                            <div class="card-body text-dark">
+                                <h1 id="domSize" class="card-title"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-3">
+                <h5 class="mb-3">Etapes</h5>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <table id="tabBestPractices" class="table table-sm">
+                            <thead class="table-light">
+                                <th scope="col">Etape</th>
+                                <th scope="col">EcoIndex</th>
+                                <th scope="col">Eau (cl)</th>
+                                <th scope="col">GES (gCO2e)</th>
+                                <th scope="col">Taille du DOM</th>
+                                <th scope="col">Requêtes</th>
+                                <th scope="col">Taille de la page (Ko)</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-3">
+                <h5 class="mb-3">Bonnes pratiques</h5>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <table id="tabBestPractices" class="table table-sm">
+                            <thead class="table-light">
+                                <th scope="col">Bonne pratique</th>
+                                <th scope="col">Résultat</th>
+                                <th scope="col">Effort</th>
+                                <th scope="col">Impact</th>
+                                <th scope="col">Priorité</th>
+                                <th scope="col">Grade</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
