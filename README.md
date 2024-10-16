@@ -52,28 +52,28 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
 -**LinkedIn** 
 -- **Scénario 1 : "Recherche d'offres récentes"**
-1.	![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./Scenario1-etape1.png)
-2.	![Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".](./scenario1-etape2.png)
-3.	![Il sélectionne des mots clés, et la zone géographique qui l'intéresse.](./scenario1-etape3.png)
-4.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./scenario1-etape4.png)
+1.	![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./images_scenarios/Scenario1-etape1.png)
+2.	![Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".](./images_scenarios/scenario1-etape2.png)
+3.	![Il sélectionne des mots clés, et la zone géographique qui l'intéresse.](./images_scenarios/scenario1-etape3.png)
+4.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./images_scenarios/scenario1-etape4.png)
 
 -- **Scénario 2 : "Exploration des offres intéressantes"**
-1.	![L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.](./scenario1-etape3.png)
-2.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./scenario2-etape2.png)
-3.	![Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.](./scenario2-etape3.png)
-4.	![Il consulte les détails de l'offre.](./scenario2-etape4.png)
-5.	![Il revient à la liste des recommandations pour poursuivre l'exploration.](./scenario2-etape5.png)
+1.	![L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.](./images_scenarios/scenario1-etape3.png)
+2.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./images_scenarios/scenario2-etape2.png)
+3.	![Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.](./images_scenarios/scenario2-etape3.png)
+4.	![Il consulte les détails de l'offre.](./images_scenarios/scenario2-etape4.png)
+5.	![Il revient à la liste des recommandations pour poursuivre l'exploration.](./images_scenarios/scenario2-etape5.png)
 
 -**JobTeaser**
 -- **Scénario 1 : "Recherche d'offres récentes"**
-1.	![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./jobteaser_scenario1_etape1.png)
-2.	![Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".](./jobteaser_scenario1_etape2.png)
-3.	![Il sélectionne des mots clés, et la zone géographique qui l'intéresse.](./jobteaser_scenario1_etape3.png)
-4.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./jobteaser_scenario1_etape4.png)
+1.	![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./images_scenarios/jobteaser_scenario1_etape1.png)
+2.	![Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".](./images_scenarios/jobteaser_scenario1_etape2.png)
+3.	![Il sélectionne des mots clés, et la zone géographique qui l'intéresse.](./images_scenarios/jobteaser_scenario1_etape3.png)
+4.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./images_scenarios/jobteaser_scenario1_etape4.png)
 
 -- **Scénario 2 : "Exploration des offres intéressantes"**
-1.	![L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.](./jobteaser_scenario2_etape1.png)
-2.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./jobteaser_scenario2_etape2.png)
-3.	![Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.](./jobteaser_scenario2_etape3.png)
-4.	![Il consulte les détails de l'offre.](./jobteaser_scenario2_etape4.png)
-5.	![Il revient à la liste des recommandations pour poursuivre l'exploration.](./jobteaser_scenario2_etape5.png)
+1.	![L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.](./images_scenarios/jobteaser_scenario2_etape1.png)
+2.	![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./images_scenarios/jobteaser_scenario2_etape2.png)
+3.	![Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.](./images_scenarios/jobteaser_scenario2_etape3.png)
+4.	![Il consulte les détails de l'offre.](./images_scenarios/jobteaser_scenario2_etape4.png)
+5.	![Il revient à la liste des recommandations pour poursuivre l'exploration.](./images_scenarios/jobteaser_scenario2_etape5.png)
