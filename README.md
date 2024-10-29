@@ -75,3 +75,23 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 3.	Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse. ![Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.](./images_scenarios/jobteaser_scenario2_etape3.png)
 4.	Il consulte les détails de l'offre. ![Il consulte les détails de l'offre.](./images_scenarios/jobteaser_scenario2_etape4.png)
 5.	Il revient à la liste des recommandations pour poursuivre l'exploration. ![Il revient à la liste des recommandations pour poursuivre l'exploration.](./images_scenarios/jobteaser_scenario2_etape5.png)
+
+## Maquette de l'interface et échantillon de données
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 100 et 500 offres).
+
+L'interface retenue est composée de deux types de "pages Web" :
+-celle qui permet de rechercher des offres,
+-celle qui affichent les offres.
+
+## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
+Pour cette première version du prototype :
+- l'échantillon de données est encore chargé dans le code de manière statique,
+- les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Recherche d'offres intéressantes").
+- l'étape de connexion a été volontairement laissée de côté pour des questions de délais.
+
+Ce scénario nécessite de pouvoir naviguer entre deux types de page : la page des recherches et les page des offres.
+
+## Page des recherches
+Nous avons développé la page des recherches (cf. Fig. 1) sous une forme proche de ce que prévoyait la maquette.
+
+// à insérer
