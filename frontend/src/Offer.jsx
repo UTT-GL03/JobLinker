@@ -44,6 +44,8 @@ function OfferCard({ offer }) {
         {isExpanded ? "Voir moins" : "Voir plus"}
       </button>
       <p><strong>Date d'émission:</strong> {offer.issued}</p>
+      <p><strong>Type de contrat:</strong> {offer.type}</p>
+      <p><strong>Localisation:</strong> {offer.location}</p>
     </div>
   );
 }
