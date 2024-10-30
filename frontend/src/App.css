@@ -1,0 +1,10 @@
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a2d3a;
+    border-radius: 4px;
+    background-color:#1c1e26;
+    margin-bottom: 16px;
+    ;
+  }
+  
