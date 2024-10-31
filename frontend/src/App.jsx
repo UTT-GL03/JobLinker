@@ -1,21 +1,37 @@
-import reactLogo from './assets/react.svg'
-import Headlines from './Headlines'
-import Offer from './Offer'
-
-//import Article from './Article'
-import './App.css'
+import { useState } from "react";
+import Headlines from "./Headlines";
+import Offer from "./Offer";
 
 function App() {
-  //const [count, setCount] = useState(0)
+  const [searchTerm, setSearchTerm] = useState("");
+  const [contractType, setContractType] = useState("");
+  const [region, setRegion] = useState("");
+  const [isSearchClicked, setIsSearchClicked] = useState(false); // État pour détecter le clic sur "Chercher"
+
+  const handleSearchClick = () => {
+    setIsSearchClicked(true); // Met à jour l'état pour déclencher le filtrage
+  };
 
   return (
-    <div>
-      <Headlines/>
-      <Offer/>
+    <div className="App">
+      <Headlines
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        contractType={contractType}
+        setContractType={setContractType}
+        region={region}
+        setRegion={setRegion}
+        onSearchClick={handleSearchClick} // Passe la fonction pour détecter le clic
+      />
+      <Offer 
+        searchTerm={searchTerm} 
+        contractType={contractType} 
+        region={region} 
+        isSearchClicked={isSearchClicked} 
+        setIsSearchClicked={setIsSearchClicked} // Reset après recherche
+      />
     </div>
-    
-    
-  )
+  );
 }
 
-export default App
+export default App;

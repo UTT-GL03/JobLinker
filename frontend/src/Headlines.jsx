@@ -1,13 +1,7 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-function Headlines() {
-  const [searchTerm, setSearchTerm] = useState(""); // État pour stocker la valeur de recherche
-  const [contractType, setContractType] = useState(""); // État pour le type de contrat
-  const [region, setRegion] = useState(""); // État pour la région sélectionnée
-
-  // Liste des régions françaises
+function Headlines({ searchTerm, setSearchTerm, contractType, setContractType, region, setRegion, onSearchClick }) {
   const regions = [
     "Auvergne-Rhône-Alpes",
     "Bourgogne-Franche-Comté",
@@ -29,15 +23,20 @@ function Headlines() {
     "Mayotte",
   ];
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSearchClick(); // Appel de la fonction pour déclencher le filtrage
+  };
+
   return (
     <header>
-      <div class="topnav">
+      <div className="topnav">
         <h1>
-          <img src={reactLogo} />
+          <img src={reactLogo} alt="React Logo" />
           JobLinker
         </h1>
 
-        <form>
+        <form onSubmit={handleSearch}>
           <input
             type="text"
             placeholder="Titre de l'offre"
@@ -72,7 +71,7 @@ function Headlines() {
             ))}
           </select>
 
-          <input type="submit" value="Chercher"></input>
+          <button type="submit">Chercher</button>
         </form>
       </div>
     </header>

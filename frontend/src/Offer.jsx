@@ -1,23 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from './assets/sample_data.json';
 import "./App.css";
 
-function Offer() {
-  const [visibleOffers, setVisibleOffers] = useState(5); // Nombre d'offres visibles initialement
+function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked }) {
+  const [visibleOffers, setVisibleOffers] = useState(5);
+  const [filteredOffers, setFilteredOffers] = useState(data.offer);
+
+  // Effect pour filtrer les offres uniquement quand isSearchClicked est vrai
+  useEffect(() => {
+    if (isSearchClicked) {
+      const offers = data.offer.filter((offer) => {
+        const matchesSearchTerm = offer.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesContractType = contractType === "" || offer.type === contractType;
+        const matchesRegion = region === "" || offer.location === region;
+
+        return matchesSearchTerm && matchesContractType && matchesRegion;
+      });
+      setFilteredOffers(offers);
+      setVisibleOffers(5); // Réinitialise le nombre d'offres visibles
+      setIsSearchClicked(false); // Réinitialise l'état pour attendre le prochain clic
+    }
+  }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked]);
 
   const loadMoreOffers = () => {
-    setVisibleOffers((prev) => prev + 5); // Charge 5 offres de plus à chaque clic
+    setVisibleOffers((prev) => prev + 5);
   };
 
   return (
     <div>
       <h1>Offres</h1>
       <div className="offer-container">
-        {data.offer.slice(0, visibleOffers).map((offer, index) => (
+        {filteredOffers.slice(0, visibleOffers).map((offer, index) => (
           <OfferCard key={index} offer={offer} />
         ))}
       </div>
-      {visibleOffers < data.offer.length && ( // Vérifie s'il reste des offres à charger
+      {visibleOffers < filteredOffers.length && (
         <button onClick={loadMoreOffers} className="load-more">
           Voir plus d'offres
         </button>
