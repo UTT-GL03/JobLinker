@@ -80,8 +80,13 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 100 et 500 offres).
 
 L'interface retenue est composée de deux types de "pages Web" :
--celle qui permet de rechercher des offres,
--celle qui affichent les offres.
+- celle qui permet de rechercher des offres,
+- celle qui affichent les offres.
+![Page qui permet de rechercher des offres](./frontend/mockup/front_page.png)
+![Page qui affiche les offres](./frontend/mockup/offers.png)
+**Fig.1**: Maquette de l'interface du prototype : **a.** type de page pour la recherche, **b.** type de page pour les offres (liées à une recherche).
+
+Dans un objectif de sobriété environnementale, nous affichons les offres cinq par cinq.
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
 Pour cette première version du prototype :
@@ -91,7 +96,10 @@ Pour cette première version du prototype :
 
 Ce scénario nécessite de pouvoir naviguer entre deux types de page : la page des recherches et les page des offres.
 
-## Page des recherches
-Nous avons développé la page des recherches (cf. Fig. 1) sous une forme proche de ce que prévoyait la maquette.
+**Page des recherches**
 
-// à insérer
+Nous avons développé la page des recherches sous une forme proche de ce que prévoyait la maquette.
+![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
+**Fig.2:** Prototype de la page de recherche des offres
+
+Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". 
