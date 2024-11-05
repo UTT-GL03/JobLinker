@@ -81,12 +81,13 @@ Au vu des différents services comparés, des exigences environnementales exprim
 
 L'interface retenue est composée d'un seul type de "pages Web" avec:
 - un header qui permet de rechercher des offres,
-- celle qui affichent les offres.
-![Page qui permet de rechercher des offres](./frontend/mockup/front_page.png)
-![Page qui affiche les offres](./frontend/mockup/offers.png)
-**Fig.1**: Maquette de l'interface du prototype : **a.** type de page pour la recherche, **b.** type de page pour les offres (liées à une recherche).
+- un content qui affichent les offres liées à cette recherche.
+![header qui permet de rechercher des offres](./frontend/mockup/front_page.png)
+![content qui affiche les offres](./frontend/mockup/offers.png)
+**Fig.1**: Maquette de l'interface du prototype : **a.** header pour la recherche, **b.** content pour les offres (liées à une recherche).
 
-Dans un objectif de sobriété environnementale, nous affichons les offres cinq par cinq.
+Il est possible d'accéder aux détails d'une offre en cliquant sur "voir plus" dans la description de l'offre, sans changer de page. Nous avons fait ce choix de conception car nous avons obtenu de meilleurs résultats  qu'en créant deux types de pages web distincts (une page web dédiée à la recherche, une page web dédiée à l'affichage des offres et de leurs détails). 
+Egalement, dans un objectif de sobriété environnementale, nous avons choisi d'afficher les offres cinq par cinq.
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
 Pour cette première version du prototype :
@@ -94,20 +95,19 @@ Pour cette première version du prototype :
 - les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Recherche d'offres intéressantes").
 - l'étape de connexion a été volontairement laissée de côté pour des questions de délais.
 
-Ce scénario nécessite de pouvoir naviguer entre deux types de page : la page des recherches et les page des offres.
+Comme dit précedemment, ce scénario ne nécessite pas de pouvoir naviguer entre plusieurs types de page. 
 
-**Page des recherches**
+**Page de recherches et de consultation des offres**
 
-Nous avons développé la page des recherches sous une forme proche de ce que prévoyait la maquette.
+Nous avons développé notre page web sous une forme proche de ce que prévoyait la maquette.
 ![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
-**Fig.2:** Prototype de la page de recherche des offres
+**Fig.2:** Prototype de la page de recherches et de consultation des offres
 
-Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". 
+Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est encourageante, que ce soit en mode "développement" comme en mode "pré-production".
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape2.png)
 **Fig.3:** En mode développement 
 ![en mode pre prod](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1_.png)
 ![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
 
-**Page des offres**
 
