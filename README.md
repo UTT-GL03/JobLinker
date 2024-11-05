@@ -97,7 +97,8 @@ Pour cette première version du prototype :
 Ce scénario nécessite de pouvoir naviguer entre deux types de page : la page des recherches et les page des offres.
 
 **Page des recherches**
-Nous avons développé la page des recherches (cf. Fig. 1) sous une forme proche de ce que prévoyait la maquette.
+
+Nous avons développé la page des recherches sous une forme proche de ce que prévoyait la maquette.
 ![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
 **Fig.2:** Prototype de la page de recherche des offres
 
