@@ -1,15 +1,28 @@
 import { useState, useEffect } from "react";
-import data from './assets/sample_data.json';
 import "./App.css";
 
-function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked }) {
+function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
   const [visibleOffers, setVisibleOffers] = useState(5);
-  const [filteredOffers, setFilteredOffers] = useState(data.offer);
+  const [filteredOffers, setFilteredOffers] = useState([]);
+  const [article, setArticle] = useState({});
 
-  // Effect pour filtrer les offres uniquement quand isSearchClicked est vrai
+  useEffect(() => {
+    fetch('/sample_data.json')
+      .then(response => response.json())
+      .then(data => {
+        setFilteredOffers(data.offer);
+
+        const foundArticle = data.articles.find(article => article.issued === id);
+        if (foundArticle) {
+          setArticle(foundArticle);
+        }
+      })
+      .catch(error => console.error("Erreur lors du chargement des données :", error));
+  }, [id]);
+
   useEffect(() => {
     if (isSearchClicked) {
-      const offers = data.offer.filter((offer) => {
+      const offers = filteredOffers.filter((offer) => {
         const matchesSearchTerm = offer.title.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesContractType = contractType === "" || offer.type === contractType;
         const matchesRegion = region === "" || offer.location === region;
@@ -20,7 +33,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       setVisibleOffers(5); // Réinitialise le nombre d'offres visibles
       setIsSearchClicked(false); // Réinitialise l'état pour attendre le prochain clic
     }
-  }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked]);
+  }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, filteredOffers]);
 
   const loadMoreOffers = () => {
     setVisibleOffers((prev) => prev + 5);
@@ -38,6 +51,14 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
         <button onClick={loadMoreOffers} className="load-more">
           Voir plus d'offres
         </button>
+      )}
+      {article && (
+        <div className="article-details">
+          <h2>{article.heading}</h2>
+          <p><strong>Auteur:</strong> {article.creator}</p>
+          <p><strong>Date d'émission:</strong> {article.issued}</p>
+          <p>{article.content}</p>
+        </div>
       )}
     </div>
   );
