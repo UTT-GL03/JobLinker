@@ -77,11 +77,16 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 5.	Il revient à la liste des recommandations pour poursuivre l'exploration. ![Il revient à la liste des recommandations pour poursuivre l'exploration.](./images_scenarios/jobteaser_scenario2_etape5.png)
 
 ## Maquette de l'interface et échantillon de données
-Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 100 et 500 offres).
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 1000 et 5000 offres).
 
-L'interface retenue est composée de deux types de "pages Web" :
--celle qui permet de rechercher des offres,
--celle qui affichent les offres.
+L'interface retenue est composée d'un seul type de "page Web" avec:
+- un header qui permet de rechercher des offres,
+- un content qui affichent les offres liées à cette recherche.
+![notre page web](./frontend/mockup/front_page.png)
+**Fig.1**: Maquette de l'interface du prototype : **a.** header pour la recherche, **b.** content pour les offres (liées à une recherche).
+
+Il est possible d'accéder aux détails d'une offre en cliquant sur "voir plus" dans la description de l'offre, sans changer de page. Nous avons fait ce choix de conception car nous avons obtenu de meilleurs résultats  qu'en créant deux types de pages web distincts (une page web dédiée à la recherche, une page web dédiée à l'affichage des offres et de leurs détails). 
+Egalement, dans un objectif de sobriété environnementale, nous avons choisi d'afficher les offres cinq par cinq.
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
 Pour cette première version du prototype :
@@ -89,9 +94,22 @@ Pour cette première version du prototype :
 - les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Recherche d'offres intéressantes").
 - l'étape de connexion a été volontairement laissée de côté pour des questions de délais.
 
-Ce scénario nécessite de pouvoir naviguer entre deux types de page : la page des recherches et les page des offres.
+Comme dit précedemment, ce scénario ne nécessite pas de pouvoir naviguer entre plusieurs types de page. 
 
-## Page des recherches
-Nous avons développé la page des recherches (cf. Fig. 1) sous une forme proche de ce que prévoyait la maquette.
+### **Page de recherches et de consultation des offres**
 
-// à insérer
+Nous avons développé notre page web sous une forme proche de ce que prévoyait la maquette.
+![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
+**Fig.2:** Prototype de la page de recherches et de consultation des offres
+
+Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est encourageante, que ce soit en mode "développement" comme en mode "pré-production".
+
+![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
+![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape2.png)
+**Fig.3:** En mode développement 
+
+
+![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape1_preprod.png)
+![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
+**Fig.4:** En mode pré-production
+
