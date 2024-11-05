@@ -111,5 +111,5 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 
 ![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape1_preprod.png)
 ![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
-**Fig.3:** En mode pré-production
+**Fig.4:** En mode pré-production
 
