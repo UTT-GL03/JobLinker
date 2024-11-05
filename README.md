@@ -103,3 +103,11 @@ Nous avons développé la page des recherches sous une forme proche de ce que pr
 **Fig.2:** Prototype de la page de recherche des offres
 
 Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est déjà encourageante en mode "développement" mais encore plus en mode "pré-production". 
+![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
+![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape2.png)
+**Fig.3:** En mode développement 
+![en mode pre prod](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1_.png)
+![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
+
+**Page des offres**
+
