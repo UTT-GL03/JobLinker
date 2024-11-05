@@ -86,7 +86,7 @@ L'interface retenue est composée de deux types de "pages Web" :
 ![Page qui affiche les offres](./frontend/mockup/offers.png)
 **Fig.1**: Maquette de l'interface du prototype : **a.** type de page pour la recherche, **b.** type de page pour les offres (liées à une recherche).
 
-Dans un objectif de sobriété environnementale, les offres cinq par cinq.
+Dans un objectif de sobriété environnementale, nous affichons les offres cinq par cinq.
 
 ## Prototype n°1 : Fonctionnalités pour le scénario prioritaire avec données statiques
 Pour cette première version du prototype :
