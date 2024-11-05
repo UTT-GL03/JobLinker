@@ -4,18 +4,12 @@ import "./App.css";
 function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
   const [visibleOffers, setVisibleOffers] = useState(5);
   const [filteredOffers, setFilteredOffers] = useState([]);
-  const [article, setArticle] = useState({});
 
   useEffect(() => {
     fetch('/sample_data.json')
       .then(response => response.json())
       .then(data => {
         setFilteredOffers(data.offer);
-
-        const foundArticle = data.articles.find(article => article.issued === id);
-        if (foundArticle) {
-          setArticle(foundArticle);
-        }
       })
       .catch(error => console.error("Erreur lors du chargement des données :", error));
   }, [id]);
@@ -52,14 +46,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
           Voir plus d'offres
         </button>
       )}
-      {article && (
-        <div className="article-details">
-          <h2>{article.heading}</h2>
-          <p><strong>Auteur:</strong> {article.creator}</p>
-          <p><strong>Date d'émission:</strong> {article.issued}</p>
-          <p>{article.content}</p>
-        </div>
-      )}
+  
     </div>
   );
 }
