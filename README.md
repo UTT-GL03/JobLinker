@@ -77,10 +77,10 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 5.	Il revient à la liste des recommandations pour poursuivre l'exploration. ![Il revient à la liste des recommandations pour poursuivre l'exploration.](./images_scenarios/jobteaser_scenario2_etape5.png)
 
 ## Maquette de l'interface et échantillon de données
-Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 100 et 500 offres).
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 1000 et 5000 offres).
 
-L'interface retenue est composée de deux types de "pages Web" :
-- celle qui permet de rechercher des offres,
+L'interface retenue est composée d'un seul type de "pages Web" avec:
+- un header qui permet de rechercher des offres,
 - celle qui affichent les offres.
 ![Page qui permet de rechercher des offres](./frontend/mockup/front_page.png)
 ![Page qui affiche les offres](./frontend/mockup/offers.png)
