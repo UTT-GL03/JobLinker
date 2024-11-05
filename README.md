@@ -119,4 +119,4 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. Ce comportement, plus réaliste, n'a pour effet qu'une requête supplémentaire (puisque nous n'avons qu'une page affichée).
 
 ## Impact envrionnemental - Prototype n°2
-Concernant l'évaluation de l'impact environemental du scénario, par rapport au prototype n°1 /// à compléter
+Concernant l'évaluation de l'impact environemental du scénario, par rapport au prototype n°1, nous constatons de lègères différences (nombre de requêtes un peu plus important) mais nos résultats sont toujours satisfaisants. 
