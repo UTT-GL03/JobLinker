@@ -79,11 +79,10 @@ Nous avons choisi de comparer l'impact des scénarios sur les services de quotid
 ## Maquette de l'interface et échantillon de données
 Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 1000 et 5000 offres).
 
-L'interface retenue est composée d'un seul type de "pages Web" avec:
+L'interface retenue est composée d'un seul type de "page Web" avec:
 - un header qui permet de rechercher des offres,
 - un content qui affichent les offres liées à cette recherche.
-![header qui permet de rechercher des offres](./frontend/mockup/front_page.png)
-![content qui affiche les offres](./frontend/mockup/offers.png)
+![notre page web](./frontend/mockup/front_page.png)
 **Fig.1**: Maquette de l'interface du prototype : **a.** header pour la recherche, **b.** content pour les offres (liées à une recherche).
 
 Il est possible d'accéder aux détails d'une offre en cliquant sur "voir plus" dans la description de l'offre, sans changer de page. Nous avons fait ce choix de conception car nous avons obtenu de meilleurs résultats  qu'en créant deux types de pages web distincts (une page web dédiée à la recherche, une page web dédiée à l'affichage des offres et de leurs détails). 
@@ -97,7 +96,7 @@ Pour cette première version du prototype :
 
 Comme dit précedemment, ce scénario ne nécessite pas de pouvoir naviguer entre plusieurs types de page. 
 
-**Page de recherches et de consultation des offres**
+### **Page de recherches et de consultation des offres**
 
 Nous avons développé notre page web sous une forme proche de ce que prévoyait la maquette.
 ![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
@@ -107,7 +106,8 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape2.png)
 **Fig.3:** En mode développement 
-![en mode pre prod](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1_.png)
+![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape1_.png)
 ![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
+**Fig.3:** En mode pré-production
 
 
