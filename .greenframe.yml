@@ -1,0 +1,5 @@
+baseURL: http://localhost
+projectName: JobLinker
+scenarios:
+  - path: ./benchmark/scenario1.js
+    name: Charge la page de recherche et consultation des offres
