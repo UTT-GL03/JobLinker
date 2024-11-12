@@ -3,3 +3,5 @@ projectName: JobLinker
 scenarios:
   - path: ./benchmark/scenario1.js
     name: Charge la page de recherche et consultation des offres
+containers:
+  - joblinker-static_hosting-1

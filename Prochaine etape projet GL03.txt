@@ -1,0 +1,4 @@
+Prochaine etape projet GL03 : 
+
+Commenter les images greenFrame (imagesprototype2) : niveau de reseau élevé en raison de la quantité de données dans sample data. Piste d'amléioration prototype 3 : BDD
+Autre piste : Ecran 
