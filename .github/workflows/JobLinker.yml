@@ -3,11 +3,13 @@ on:
   push:
 
 jobs:
-  build:
+  evaluate:
     runs-on: ubuntu-latest
     steps:
       - name: Download sources
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 #we need the whole history
       - name: Set up NodeJS
         uses: actions/setup-node@v4
         with:
@@ -29,5 +31,7 @@ jobs:
         uses: docker://benel/wait-for-response:1
         with:
           args: http://localhost/ 200 30000 500
-      - name: Watch frontend initial payload
-        run: curl --silent localhost
+      - name: Measure carbon footprint
+        uses: marmelab/greenframe-action@1.0.0
+        env:
+          GREENFRAME_SECRET_TOKEN: ${{secrets.GREENFRAME_SECRET_TOKEN}}
