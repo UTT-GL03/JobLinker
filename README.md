@@ -102,7 +102,7 @@ Nous avons développé notre page web sous une forme proche de ce que prévoyait
 ![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
 **Fig.2:** Prototype de la page de recherches et de consultation des offres
 
-## Impact envrionnemental - Prototype n°1
+## Impact environnemental - Prototype n°1
 Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est encourageante, que ce soit en mode "développement" comme en mode "pré-production".
 
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
@@ -120,3 +120,7 @@ Pour cette deuxième version du prototype, les données (toujours statiques) son
 
 ## Impact envrionnemental - Prototype n°2
 Concernant l'évaluation de l'impact environemental du scénario, par rapport au prototype n°1, nous constatons de lègères différences (nombre de requêtes un peu plus important) mais nos résultats sont toujours satisfaisants. 
+
+D'ailleurs, à partir de cette version, et à moins de changements profonds, l'EcoIndex ne devrait plus évoluer de manière significative. Nous utiliserons désormais un autre logiciel, GreenFrame, qui évalue non pas l'impact "environné" de la consultation (incorporant une participation au cycle de vie du terminal) mais celui de la consultation proprement dite (cf. Tab.3) et de manière beaucoup plus fiable à partir des statistiques d'utilisation des ressources physiques (CPU, mémoire, réseau, disque). 
+
+Cependant, nous utiliserons GreenFrame uniquement sur notre application, et pas sur celles de nos concurrents à cause de problèmes d'autentification (login, password requis). 
