@@ -102,6 +102,7 @@ Nous avons développé notre page web sous une forme proche de ce que prévoyait
 ![page de recherche des offres](./frontend/Prototype_1_captures_ecran/page_recherche_offres.png)
 **Fig.2:** Prototype de la page de recherches et de consultation des offres
 
+## Impact envrionnemental - Prototype n°1
 Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est encourageante, que ce soit en mode "développement" comme en mode "pré-production".
 
 ![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
@@ -113,3 +114,9 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 ![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
 **Fig.4:** En mode pré-production
 
+## Prototype n°2 : Fonctionnalités pour le scénario prioritaire avec données statiques chargées de manière dynamique
+
+Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. Ce comportement, plus réaliste, n'a pour effet qu'une requête supplémentaire (puisque nous n'avons qu'une page affichée).
+
+## Impact envrionnemental - Prototype n°2
+Concernant l'évaluation de l'impact environemental du scénario, par rapport au prototype n°1, nous constatons de lègères différences (nombre de requêtes un peu plus important) mais nos résultats sont toujours satisfaisants. 
