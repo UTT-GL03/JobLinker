@@ -60,7 +60,7 @@ Nous avons choisi de comparer l'impact des scénarios sur les plateformes suivan
 
 Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
 
-- Resultats LinkedIn ![./Resultats_LinkedIn.md]
+- Resultats LinkedIn ![resultats_LinkedIn](./Resultats_LinkedIn.md)
 - Resultats Jobteaser.
 
 ## Resultats obtenus - LinkedIn
