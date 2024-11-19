@@ -6,10 +6,10 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
-    fetch('/sample_data.json')
+    fetch(`http://localhost:5984/joblinker/${id}`)
       .then(response => response.json())
       .then(data => {
-        setFilteredOffers(data.offer);
+        setFilteredOffers(data);
       })
       .catch(error => console.error("Erreur lors du chargement des données :", error));
   }, [id]);
