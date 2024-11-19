@@ -15,6 +15,10 @@ services:
     environment:
       - COUCHDB_USER
       - COUCHDB_PASSWORD
+    healthcheck:
+      test: curl -f http://localhost:5984/_up || exit 1
+      interval: 2s
+      timeout: 3s
     
   accessible_backend:
     image: curlimages/curl
@@ -26,6 +30,9 @@ services:
         put backend:5984/_node/nonode@nohost/_config/cors/origins --data '"*"'
         put backend:5984/qvotidie
         put backend:5984/qvotidie/_security --data '{"members":{"roles":[]},"admins":{"roles":["_admin"]}}'
+    depends_on:
+      backend:
+        condition: service_healthy
     
   updated_samples:
     image: curlimages/curl
@@ -35,3 +42,6 @@ services:
     command:
       - |
         curl -X POST http://backend:5984/database_joblinker_prot3/_bulk_docs -H "Content-Type: application/json" -d @/sample_data.json
+    depends_on:
+      accessible_backend:
+        condition: service_completed_successfully
