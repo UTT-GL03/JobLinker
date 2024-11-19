@@ -26,6 +26,8 @@ jobs:
           npm run build
       - name: Start frontend
         run: |
+          export COUCHDB_USER="TO_BE_CHANGED"
+          export COUCHDB_PASSWORD="TO_BE_CHANGED"
           docker compose up --detach
       - name: Wait for frontend
         uses: docker://benel/wait-for-response:1
