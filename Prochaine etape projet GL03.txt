@@ -6,3 +6,5 @@ Autre piste : Ecran
 Finir cette etape : mesurer l'impact du serveur Web : si on n'a qu'un rapport de 2, c'est parce qu'on a toujours notre très grande qtitité de données sample data qui utilise tout le réseau (100%)
 
 Reprendre commentaires faits par le prof et faire les modifications demandées.
+
+Dire que notre hypothèse est bien validée, et que la forte consommation de réseau était liée à data_sample (après suppression des profils, consommation divisée par deux)

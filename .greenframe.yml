@@ -5,3 +5,4 @@ scenarios:
     name: Charge la page de recherche et consultation des offres
 containers:
   - joblinker-static_hosting-1
+  - joblinker-backend-1
