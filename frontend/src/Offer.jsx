@@ -6,20 +6,22 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5984/joblinker/${id}`)
+    fetch(`http://localhost:5984/database_joblinker_prot3/_all_docs?include_docs=true`)
       .then(response => response.json())
       .then(data => {
-        setFilteredOffers(data);
+        // Adaptez au nouveau format JSON
+        const allDocs = data.rows.map(row => row.doc);
+        setFilteredOffers(allDocs);
       })
       .catch(error => console.error("Erreur lors du chargement des données :", error));
   }, [id]);
 
   useEffect(() => {
     if (isSearchClicked) {
-      const offers = filteredOffers.filter((offer) => {
-        const matchesSearchTerm = offer.title.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesContractType = contractType === "" || offer.type === contractType;
-        const matchesRegion = region === "" || offer.location === region;
+      const offers = filteredOffers.filter((doc) => {
+        const matchesSearchTerm = doc.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesContractType = contractType === "" || doc.type === contractType;
+        const matchesRegion = region === "" || doc.location === region;
 
         return matchesSearchTerm && matchesContractType && matchesRegion;
       });
@@ -37,8 +39,8 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
     <div>
       <h1>Offres</h1>
       <div className="offer-container">
-        {filteredOffers.slice(0, visibleOffers).map((offer, index) => (
-          <OfferCard key={index} offer={offer} />
+        {filteredOffers.slice(0, visibleOffers).map((doc, index) => (
+          <OfferCard key={index} doc={doc} />
         ))}
       </div>
       {visibleOffers < filteredOffers.length && (
@@ -46,31 +48,30 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
           Voir plus d'offres
         </button>
       )}
-  
     </div>
   );
 }
 
-function OfferCard({ offer }) {
+function OfferCard({ doc }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleContent = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const contentToShow = isExpanded ? offer.content : `${offer.content.substring(0, 100)}...`;
+  const contentToShow = isExpanded ? doc.content : `${doc.content.substring(0, 100)}...`;
 
   return (
     <div className="offer-card">
-      <h2>{offer.company}</h2>
-      <h3>{offer.title}</h3>
+      <h2>{doc.company}</h2>
+      <h3>{doc.title}</h3>
       <p>{contentToShow}</p>
       <button onClick={toggleContent} className="see-more">
         {isExpanded ? "Voir moins" : "Voir plus"}
       </button>
-      <p><strong>Date d'émission:</strong> {offer.issued}</p>
-      <p><strong>Type de contrat:</strong> {offer.type}</p>
-      <p><strong>Localisation:</strong> {offer.location}</p>
+      <p><strong>Date d'émission:</strong> {doc.issued}</p>
+      <p><strong>Type de contrat:</strong> {doc.type}</p>
+      <p><strong>Localisation:</strong> {doc.location}</p>
     </div>
   );
 }
