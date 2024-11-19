@@ -65,9 +65,9 @@ Les résultats sont les suivants (attention, d'une journée à l'autre, on peut 
 
 ## Maquette de l'interface et échantillon de données
 
-Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (entre 1000 et 3000 profils, et 1000 et 5000 offres).
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (1000 et 5000 offres). Nous avons volontairement choisi de ne pas intégrer un système d'authentification (login et password) car cela aurait complexifié notre prototype et que nous disposons d'un temps limité pour ce projet.
 
-L'interface retenue est composée d'un seul type de "page Web" avec:
+L'interface retenue est donc composée d'un seul type de "page Web" avec:
 
 - un header qui permet de rechercher des offres,
 - un content qui affichent les offres liées à cette recherche.
@@ -83,7 +83,6 @@ Pour cette première version du prototype :
 
 - l'échantillon de données est encore chargé dans le code de manière statique,
 - les fonctionnalités implémentées ne sont que celles nécessaires pour suivre le scénario prioritaire ("Recherche d'offres intéressantes").
-- l'étape de connexion a été volontairement laissée de côté pour des questions de délais.
 
 Comme dit précedemment, ce scénario ne nécessite pas de pouvoir naviguer entre plusieurs types de page.
 
