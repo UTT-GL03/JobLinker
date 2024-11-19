@@ -32,9 +32,9 @@ Pour cette raison, nous avons choisi de modéliser les scénarios suivants : l'u
 
 ## Scénario 1 : "Recherche d'offres récentes"
 
-1. L'utilisateur se connecte à LinkedIn ou JobTeaser.
+1. L'utilisateur se rend sur la plateforme de recherche d'emploi.
 2. Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".
-3. Il sélectionne des mots clés, et la zone géographique qui l'intéresse.
+3. Il sélectionne des mots clés, une zone géographique, et le type de contract qui l'intéresse.
 4. Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.
 
 ## Scénario 2 : "Exploration des offres intéressantes"
@@ -53,10 +53,15 @@ L'EcoIndex d'une page (de A à G) est calculé (sources : EcoIndex, Octo, GreenI
 - le poids des téléchargements,
 - le nombre d'éléments du document.
 
-Nous avons choisi de comparer l'impact des scénarios sur les services de quotidiens nationaux de diverses sensibilités politiques, économiques et environementales :
+Nous avons choisi de comparer l'impact des scénarios sur les plateformes suivantes :
 
 - LinkedIn,
-- Indeed.
+- Jobteaser.
+
+Les résultats sont les suivants (attention, d'une journée à l'autre, on peut observer une certaine variabilité) :
+
+- Resultats LinkedIn
+- Resultats Jobteaser.
 
 ## Resultats obtenus - LinkedIn
 
