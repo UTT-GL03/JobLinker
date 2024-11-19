@@ -2,3 +2,7 @@ Prochaine etape projet GL03 :
 
 Commenter les images greenFrame (imagesprototype2) : niveau de reseau élevé en raison de la quantité de données dans sample data. Piste d'amléioration prototype 3 : BDD
 Autre piste : Ecran 
+
+Finir cette etape : mesurer l'impact du serveur Web : si on n'a qu'un rapport de 2, c'est parce qu'on a toujours notre très grande qtitité de données sample data qui utilise tout le réseau (100%)
+
+Reprendre commentaires faits par le prof et faire les modifications demandées.
