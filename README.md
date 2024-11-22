@@ -101,7 +101,7 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 
 ## Prototype n°2 : Fonctionnalités pour le scénario prioritaire avec données statiques chargées de manière dynamique
 
-Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. Ce comportement, plus réaliste, n'a pour effet qu'une requête supplémentaire (puisque nous n'avons qu'une page affichée).
+Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. 
 
 ## Impact envrionnemental - Prototype n°2
 
@@ -115,3 +115,11 @@ D'ailleurs, à partir de cette version, l'EcoIndex ne devrait plus évoluer de m
 - ![Resultats obtenus](./images_prototype2/greenFrame4(comparaisonutilisationdockervspasdocker).png)
 
 Nous constatons un niveau de solicitation du réseau assez élevé, qui explique que nous ayons des résulats un peu moins bons que prévu. Nous supposons que cela est lié à la quantité d'offres générées par le fichier "sample_data.jon". Pour rappel, nous avions choisi de générer plusieurs milliers d'offres pour obtenir un échantillon de données réaliste. Une autre piste d'amélioration à explorer lors de notre troisième prototype sera l'utilisation d'une base de données, qui devrait également diminuer la quantité de réseau utilisée. 
+
+## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
+
+Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (CouchDB). L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier des offres plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
+- ![Resultats obtenus](./resultats_greenframe_prototype3/evolution_consommation_prot3.png)
+- ![Resultats obtenus](./resultats_greenframe_prototype3/update_sample_data.png)
+
+Nos mesures nous permettent de constater de bien meilleurs résultats que lors de notre précédent prototype, avec notamment une baisse importante de la charge du réseau (de 65% à 4%) entre les deux prototypes. L'utilisation d'une base donnée et la supression d'une partie du fichier sample_data.json (supression des profils utilisateurs qui n'étaient pas utilisés) peuvent expliquer ce constat, confirmant l'hypothèse émise lors des mesures d'impact de notre prototype n°2. 
