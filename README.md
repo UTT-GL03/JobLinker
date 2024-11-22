@@ -96,13 +96,8 @@ Nous avons développé notre page web sous une forme proche de ce que prévoyait
 
 Dans l'état actuel du prototype, il est possible d'avoir une première idée de l'impact environnemental du frontend. Bien entendu, il manque encore le chargement dynamique des données, mais nous pouvons déjà évaluer l'impact de l'affichage des données et du framework (au sens large : React, PicoCSS, DayJS). Cette évaluation de l'impact (cf. capture ci-dessous) est encourageante, que ce soit en mode "développement" comme en mode "pré-production".
 
-![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape1.png)
-![en mode dev](./images_scenarios/joblinker/Dev/joblinker_scenario1_etape2.png)
-**Fig.3:** En mode développement
+- [Resultats obtenus](./Impact_environnemental_prototype1.md)
 
-![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape1_preprod.png)
-![en mode pre prod](./images_scenarios/joblinker/Pre_prod/joblinker_scenario1_etape2_preprod.png)
-**Fig.4:** En mode pré-production
 
 ## Prototype n°2 : Fonctionnalités pour le scénario prioritaire avec données statiques chargées de manière dynamique
 
