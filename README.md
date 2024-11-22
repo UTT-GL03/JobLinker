@@ -111,7 +111,7 @@ D'ailleurs, à partir de cette version, l'EcoIndex ne devrait plus évoluer de m
 
 - ![Resultats obtenus](./images_prototype2/greenFrame1.png)
 - ![Resultats obtenus](./images_prototype2/greenFrame2.png)
-- ![Resultats obtenus](.images_prototype2/greenFrame3(comparaisonutilisationdockervspasdocker).png)
+- ![Resultats obtenus](./images_prototype2/greenFrame3(comparaisonutilisationdockervspasdocker).png)
 - ![Resultats obtenus](./images_prototype2/greenFrame4(comparaisonutilisationdockervspasdocker).png)
 
 Nous constatons un niveau de solicitation du réseau assez élevé, qui explique que nous ayons des résulats un peu moins bons que prévu. Nous supposons que cela est lié à la quantité d'offres générées par le fichier "sample_data.jon". Pour rappel, nous avions choisi de générer plusieurs milliers d'offres pour obtenir un échantillon de données réaliste. Une autre piste d'amélioration à explorer lors de notre troisième prototype sera l'utilisation d'une base de données, qui devrait également diminuer la quantité de réseau utilisée. 
