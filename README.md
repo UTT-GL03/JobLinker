@@ -109,6 +109,9 @@ Concernant l'évaluation de l'impact environemental du scénario, par rapport au
 
 D'ailleurs, à partir de cette version, l'EcoIndex ne devrait plus évoluer de manière significative. C'est pourquoi nous utiliserons désormais un autre logiciel, GreenFrame, qui évalue non pas l'impact "environné" de la consultation (incorporant une participation au cycle de vie du terminal) mais celui de la consultation proprement dite et de manière beaucoup plus fiable à partir des statistiques d'utilisation des ressources physiques (CPU, mémoire, réseau, disque). Cependant, nous utiliserons GreenFrame uniquement sur notre application, et pas sur celles de nos concurrents à cause de problèmes d'autentification (login, password requis).
 
-- [Resultats obtenus](./Impact_environnemental_prototype2.md)
+- ![Resultats obtenus](./images_prototype2/greenFrame1.png)
+- ![Resultats obtenus](./images_prototype2/greenFrame2.png)
+- ![Resultats obtenus](.images_prototype2/greenFrame3(comparaisonutilisationdockervspasdocker).png)
+- ![Resultats obtenus](./images_prototype2/greenFrame4(comparaisonutilisationdockervspasdocker).png)
 
 Nous constatons un niveau de solicitation du réseau assez élevé, qui explique que nous ayons des résulats un peu moins bons que prévu. Nous supposons que cela est lié à la quantité d'offres générées par le fichier "sample_data.jon". Pour rappel, nous avions choisi de générer plusieurs milliers d'offres pour obtenir un échantillon de données réaliste. Une autre piste d'amélioration à explorer lors de notre troisième prototype sera l'utilisation d'une base de données, qui devrait également diminuer la quantité de réseau utilisée. 
