@@ -65,7 +65,7 @@ Les résultats sont les suivants (attention, d'une journée à l'autre, on peut 
 
 ## Maquette de l'interface et échantillon de données
 
-Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données réalistes (1000 et 5000 offres). Nous avons volontairement choisi de ne pas intégrer un système d'authentification (login et password) car cela aurait complexifié notre prototype et que nous disposons d'un temps limité pour ce projet.
+Au vu des différents services comparés, des exigences environnementales exprimées plus haut et des scénarios retenus, nous avons défini pour notre prototype une maquette de l'interface et un échantillon de données relativemment petit pour commencer ( entre 100 et 500 offres). Nous avons volontairement choisi de ne pas intégrer un système d'authentification (login et password) car cela aurait complexifié notre prototype et que nous disposons d'un temps limité pour ce projet.
 
 L'interface retenue est donc composée d'un seul type de "page Web" avec:
 
@@ -103,7 +103,7 @@ Dans l'état actuel du prototype, il est possible d'avoir une première idée de
 
 Pour cette deuxième version du prototype, les données (toujours statiques) sont désormais chargées par le frontend à travers le réseau immédiatement après un premier affichage à vide. 
 
-## Impact envrionnemental - Prototype n°2
+## Impact environnemental - Prototype n°2
 
 Concernant l'évaluation de l'impact environemental du scénario, par rapport au prototype n°1, nous constatons de lègères différences (nombre de requêtes un peu plus important) mais nos résultats sont toujours satisfaisants.
 
@@ -123,3 +123,12 @@ Pour la troisième version du prototype, les données sont désormais stockées 
 - ![Resultats obtenus](./resultats_greenframe_prototype3/update_sample_data.png)
 
 Nos mesures nous permettent de constater de bien meilleurs résultats que lors de notre précédent prototype, avec notamment une baisse importante de la charge du réseau (de 65% à 4%) entre les deux prototypes. L'utilisation d'une base donnée et la supression d'une partie du fichier sample_data.json (supression des profils utilisateurs qui n'étaient pas utilisés) peuvent expliquer ce constat, confirmant l'hypothèse émise lors des mesures d'impact de notre prototype n°2. 
+
+## Prototype n°4 : Fonctionnalités pour le scénario prioritaire avec filtrage des données
+
+Passage à l'échelle 
+
+Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
+En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 5000 offres pour observer l'impact de ce passage à l'échelle. A l'origine, nous voulions faire un "fois 100" (50 000 offres) mais nous avons rencontré des difficultés liées à la lourdeur de notre fichier. Nous nous sommes donc contentés d'un "fois 10".
+
+
