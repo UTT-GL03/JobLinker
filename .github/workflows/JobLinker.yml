@@ -30,7 +30,7 @@ jobs:
           export COUCHDB_PASSWORD="admin"
           docker compose up --detach
       - name: Wait for frontend
-        uses: docker://paulinesaur/wait-for-response:1
+        uses: docker://benel/wait-for-response:1
         with:
           args: http://localhost/ 200 30000 500
       - name: Measure carbon footprint
