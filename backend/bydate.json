@@ -1,0 +1,13 @@
+{
+    "ddoc": "_design/fbca874dfe74bc7c49c79c60809824e75f66a89a",
+    "name": "bydate",
+    "type": "json",
+    "partitioned": false,
+    "def": {
+     "fields": [
+      {
+       "issued": "asc"
+      }
+     ]
+    }
+   }

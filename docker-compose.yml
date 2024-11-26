@@ -45,3 +45,15 @@ services:
     depends_on:
       accessible_backend:
         condition: service_completed_successfully
+  
+  index:
+    image: curlimages/curl
+    entrypoint: ["/bin/sh","-c"]
+    volumes:
+      - ./backend/bydate.json:/bydate.json
+    command:
+      - |
+        curl -X POST http://backend:5984/database_joblinker_prot3/_index -H "Content-Type: application/json" -d @/bydate.json -u '${COUCHDB_USER}:${COUCHDB_PASSWORD}'
+    depends_on:
+      accessible_backend:
+        condition: service_completed_successfully
