@@ -1,10 +1,8 @@
 Prochaine etape projet GL03 : 
 
-Commenter les images greenFrame (imagesprototype2) : niveau de reseau élevé en raison de la quantité de données dans sample data. Piste d'amléioration prototype 3 : BDD
-Autre piste : Ecran 
-
-Finir cette etape : mesurer l'impact du serveur Web : si on n'a qu'un rapport de 2, c'est parce qu'on a toujours notre très grande qtitité de données sample data qui utilise tout le réseau (100%)
 
 Reprendre commentaires faits par le prof et faire les modifications demandées.
 
-Dire que notre hypothèse est bien validée, et que la forte consommation de réseau était liée à data_sample (après suppression des profils, consommation divisée par deux)
+commenter le fait que les données pourraient se multiplier en ajoutant des profils utilisateurs, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3. 
+
+Le nombre d'offres peut augmenter avec le temps, jusque là on avait entre 100 et 500 offres (penser à corriger cette erreur dans le readme), on va passer à 5000 pour observer l'impact de ce passage à l'échelle. On voulait faire un x100 (50 000 offres) mais nous avons rencontré des difficultés liées à la lourdeur de notre fichier. 
