@@ -3,40 +3,34 @@ import "./App.css";
 
 function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
   const [visibleOffers, setVisibleOffers] = useState(5);
-  const [allOffers, setAllOffers] = useState([]); // Toutes les offres
-  const [filteredOffers, setFilteredOffers] = useState([]); // Offres filtrées
+  const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5984/database_joblinker_prot3/_find", {
-      method: "POST",
+    fetch('http://localhost:5984/database_joblinker_prot3/_find', {
+      method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         selector: {},
-        sort: [{ issued: "desc" }], // Assurez-vous que "issued" est indexé dans CouchDB
-        limit: 100,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const allDocs = data.docs; // Correction : accède directement aux documents
-        setAllOffers(allDocs); // Stocke toutes les offres
-        setFilteredOffers(allDocs); // Initialise les offres filtrées
+        sort: [{ issued: "desc" }],
+        limit: 100
       })
-      .catch((error) =>
-        console.error("Erreur lors du chargement des données :", error)
-      );
+  })
+      .then(response => response.json())
+      .then(data => {
+        // Adaptez au nouveau format JSON
+        const allDocs = data.rows.map(row => row.doc);
+        setFilteredOffers(allDocs);
+      })
+      .catch(error => console.error("Erreur lors du chargement des données :", error));
   }, [id]);
 
   useEffect(() => {
     if (isSearchClicked) {
       const offers = allOffers.filter((doc) => {
-        const matchesSearchTerm = doc.title
-          ?.toLowerCase()
-          .includes(searchTerm.toLowerCase());
-        const matchesContractType =
-          contractType === "" || doc.type === contractType;
+        const matchesSearchTerm = doc.title?.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesContractType = contractType === "" || doc.type === contractType;
         const matchesRegion = region === "" || doc.location === region;
-
+  
         return matchesSearchTerm && matchesContractType && matchesRegion;
       });
       setFilteredOffers(offers); // Met à jour les offres filtrées
@@ -44,6 +38,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       setIsSearchClicked(false); // Réinitialise l'état pour attendre le prochain clic
     }
   }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, allOffers]);
+  
 
   const loadMoreOffers = () => {
     setVisibleOffers((prev) => prev + 5);
@@ -73,30 +68,19 @@ function OfferCard({ doc }) {
     setIsExpanded(!isExpanded);
   };
 
-  // Utilisation sécurisée du contenu
-  const contentToShow = doc.content
-    ? isExpanded
-      ? doc.content
-      : `${doc.content.substring(0, 100)}...`
-    : "Pas de description disponible.";
+  const contentToShow = isExpanded ? doc.content : `${doc.content.substring(0, 100)}...`;
 
   return (
     <div className="offer-card">
-      <h2>{doc.company || "Entreprise inconnue"}</h2>
-      <h3>{doc.title || "Titre non spécifié"}</h3>
+      <h2>{doc.company}</h2>
+      <h3>{doc.title}</h3>
       <p>{contentToShow}</p>
       <button onClick={toggleContent} className="see-more">
         {isExpanded ? "Voir moins" : "Voir plus"}
       </button>
-      <p>
-        <strong>Date d'émission:</strong> {doc.issued || "Non spécifiée"}
-      </p>
-      <p>
-        <strong>Type de contrat:</strong> {doc.type || "Non spécifié"}
-      </p>
-      <p>
-        <strong>Localisation:</strong> {doc.location || "Non spécifiée"}
-      </p>
+      <p><strong>Date d'émission:</strong> {doc.issued}</p>
+      <p><strong>Type de contrat:</strong> {doc.type}</p>
+      <p><strong>Localisation:</strong> {doc.location}</p>
     </div>
   );
 }
