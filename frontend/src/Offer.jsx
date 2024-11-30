@@ -3,24 +3,25 @@ import "./App.css";
 
 function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
   const [visibleOffers, setVisibleOffers] = useState(5);
-  const [allOffers, setAllOffers] = useState([]); // Ajout d'un état pour toutes les offres
-  const [filteredOffers, setFilteredOffers] = useState([]); // Offres filtrées
+  const [allOffers, setAllOffers] = useState([]); 
+  const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
+    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true')
     fetch("http://localhost:5984/database_joblinker_prot3/_find", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         selector: {},
-        sort: [{ issued: "desc" }], // Assurez-vous que "issued" est indexé dans CouchDB
+        sort: [{ issued: "asc" }],
         limit: 100,
-      }),
+      })
     })
       .then((response) => response.json())
       .then((data) => {
-        const allDocs = data.docs; // Correction pour accéder aux documents
-        setAllOffers(allDocs); // Stocke toutes les offres
-        setFilteredOffers(allDocs); // Initialise les offres filtrées
+        const allDocs = data.docs; 
+        setAllOffers(allDocs); 
+        setFilteredOffers(allDocs); 
       })
       .catch((error) =>
         console.error("Erreur lors du chargement des données :", error)
@@ -36,9 +37,9 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
 
         return matchesSearchTerm && matchesContractType && matchesRegion;
       });
-      setFilteredOffers(offers); // Met à jour les offres filtrées
-      setVisibleOffers(5); // Réinitialise le nombre d'offres visibles
-      setIsSearchClicked(false); // Réinitialise l'état pour attendre le prochain clic
+      setFilteredOffers(offers); 
+      setVisibleOffers(5); 
+      setIsSearchClicked(false); 
     }
   }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, allOffers]);
 
@@ -70,7 +71,6 @@ function OfferCard({ doc }) {
     setIsExpanded(!isExpanded);
   };
 
-  // Gestion sécurisée des champs manquants
   const contentToShow = isExpanded
     ? doc.content || "Description non disponible."
     : `${(doc.content || "Description non disponible.").substring(0, 100)}...`;

@@ -1,0 +1,5 @@
+baseURL: http://localhost
+projectName: LinkedIN
+scenarios:
+  - path: ./benchmark/scenario1.js
+    name: Charger la pahe de recherche et consultation des offres
