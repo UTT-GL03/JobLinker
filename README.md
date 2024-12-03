@@ -109,26 +109,30 @@ Concernant l'évaluation de l'impact environemental du scénario, par rapport au
 
 D'ailleurs, à partir de cette version, l'EcoIndex ne devrait plus évoluer de manière significative. C'est pourquoi nous utiliserons désormais un autre logiciel, GreenFrame, qui évalue non pas l'impact "environné" de la consultation (incorporant une participation au cycle de vie du terminal) mais celui de la consultation proprement dite et de manière beaucoup plus fiable à partir des statistiques d'utilisation des ressources physiques (CPU, mémoire, réseau, disque). Cependant, nous utiliserons GreenFrame uniquement sur notre application, et pas sur celles de nos concurrents à cause de problèmes d'autentification (login, password requis).
 
-- ![Resultats obtenus](./images_prototype2/greenFrame1.png)
-- ![Resultats obtenus](./images_prototype2/greenFrame2.png)
-- ![Resultats obtenus](./images_prototype2/greenFrame3(comparaisonutilisationdockervspasdocker).png)
-- ![Resultats obtenus](./images_prototype2/greenFrame4(comparaisonutilisationdockervspasdocker).png)
+- ![Resultats obtenus](./images/images_prototype2/greenFrame1.png)
+- ![Resultats obtenus](./images/images_prototype2/greenFrame2.png)
+- ![Resultats obtenus](./images/images_prototype2/greenFrame3(comparaisonutilisationdockervspasdocker).png)
+- ![Resultats obtenus](./images/images_prototype2/greenFrame4(comparaisonutilisationdockervspasdocker).png)
 
 Nous constatons un niveau de solicitation du réseau assez élevé, qui explique que nous ayons des résulats un peu moins bons que prévu. Nous supposons que cela est lié à la quantité d'offres générées par le fichier "sample_data.jon". Pour rappel, nous avions choisi de générer plusieurs milliers d'offres pour obtenir un échantillon de données réaliste. Une autre piste d'amélioration à explorer lors de notre troisième prototype sera l'utilisation d'une base de données, qui devrait également diminuer la quantité de réseau utilisée. 
 
 ## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
 
 Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (CouchDB). L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier des offres plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
-- ![Resultats obtenus](./resultats_greenframe_prototype3/evolution_consommation_prot3.png)
-- ![Resultats obtenus](./resultats_greenframe_prototype3/update_sample_data.png)
+- ![Resultats obtenus](./images/images_prototype3/evolution_consommation_prot3.png)
+- ![Resultats obtenus](./images/images_prototype3/update_sample_data.png)
 
 Nos mesures nous permettent de constater de bien meilleurs résultats que lors de notre précédent prototype, avec notamment une baisse importante de la charge du réseau (de 65% à 4%) entre les deux prototypes. L'utilisation d'une base donnée et la supression d'une partie du fichier sample_data.json (supression des profils utilisateurs qui n'étaient pas utilisés) peuvent expliquer ce constat, confirmant l'hypothèse émise lors des mesures d'impact de notre prototype n°2. 
 
 ## Prototype n°4 : Fonctionnalités pour le scénario prioritaire avec filtrage des données
 
-Passage à l'échelle 
+**Passage à l'échelle** 
 
 Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
-En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 5000 offres pour observer l'impact de ce passage à l'échelle. A l'origine, nous voulions faire un "fois 100" (50 000 offres) mais nous avons rencontré des difficultés liées à la lourdeur de notre fichier. Nous nous sommes donc contentés d'un "fois 10".
+En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 10 000 offres pour observer l'impact de ce passage à l'échelle, ce qui revient à multiplier par 100 la quantité d'offres précédente. 
+
+**Prise en compte du passage à l'échelle**
+
+Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir cvonstaté que l'augmentation de la consommation greenFrame 
 
 
