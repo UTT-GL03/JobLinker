@@ -7,10 +7,19 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5984/database_joblinker_prot3/_all_docs?include_docs=true')
+    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true')
+    fetch("http://localhost:5984/database_joblinker_prot3/_find", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        selector: {},
+        sort: [{ issued: "asc" }],
+        limit: 100,
+      })
+    })
       .then((response) => response.json())
       .then((data) => {
-        const allDocs = data.rows; 
+        const allDocs = data.docs; 
         setAllOffers(allDocs); 
         setFilteredOffers(allDocs); 
       })
@@ -21,7 +30,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
 
   useEffect(() => {
     if (isSearchClicked) {
-      const offers = allOffers.filter(({doc}) => {
+      const offers = allOffers.filter((doc) => {
         const matchesSearchTerm = doc.title?.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesContractType = contractType === "" || doc.type === contractType;
         const matchesRegion = region === "" || doc.location === region;
