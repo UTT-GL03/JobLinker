@@ -126,9 +126,13 @@ Nos mesures nous permettent de constater de bien meilleurs résultats que lors d
 
 ## Prototype n°4 : Fonctionnalités pour le scénario prioritaire avec filtrage des données
 
-Passage à l'échelle 
+**Passage à l'échelle** 
 
 Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
-En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 5000 offres pour observer l'impact de ce passage à l'échelle. A l'origine, nous voulions faire un "fois 100" (50 000 offres) mais nous avons rencontré des difficultés liées à la lourdeur de notre fichier. Nous nous sommes donc contentés d'un "fois 10".
+En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 10 000 offres pour observer l'impact de ce passage à l'échelle, ce qui revient à multiplier par 100 la quantité d'offres précédente. 
+
+**Prise en compte du passage à l'échelle**
+
+Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir cvonstaté que l'augmentation de la consommation greenFrame 
 
 
