@@ -2,7 +2,7 @@
 
 - **Scénario 1 : "Recherche d'offres récentes"**
 
-1. L'utilisateur se connecte à LinkedIn. ![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./images_scenarios/Scenario1-etape1.png)
+1. L'utilisateur se connecte à LinkedIn. ![L'utilisateur se connecte à LinkedIn ou JobTeaser.](./images/images_scenarios/Scenario1-etape1.png)
 2. Après s'être authentifié, il se rend dans la rubrique "offre d'emplois". ![Après s'être authentifié, il se rend dans la rubrique "offre d'emplois".](./images_scenarios/scenario1-etape2.png)
 3. Il sélectionne des mots clés, une zone géographique et le type de contract qui l'intéresse. ![Il sélectionne des mots clés, et la zone géographique qui l'intéresse.](./images_scenarios/scenario1-etape3.png)
 4. Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres. ![Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.](./images_scenarios/scenario1-etape4.png)
