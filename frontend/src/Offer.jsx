@@ -7,7 +7,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [filteredOffers, setFilteredOffers] = useState([]);
 
   useEffect(() => {
-    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true')
+    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
     fetch("http://localhost:5984/database_joblinker_prot3/_find", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
