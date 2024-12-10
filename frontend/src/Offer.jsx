@@ -14,9 +14,16 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        selector: {},
-        sort: [{ issued: "desc" }],
-        limit: 25,
+          selector: {
+            ...(contractType && { type: contractType }),
+            ...(region && {location: region} )
+          },
+          sort: [
+            {
+              issued: "desc"
+            }
+          ],
+          limit: 100,
         bookmark: requestedBookmark
       })
     })
@@ -62,7 +69,6 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   <button 
     onClick={() => {
       setRequestedBookmark(nextBookmark); // Charge les offres suivantes
-      //loadMoreOffers(); // Affiche 5 offres supplémentaires
     }} 
     className="load-more"
   >
