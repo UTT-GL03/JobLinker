@@ -5,6 +5,8 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [visibleOffers, setVisibleOffers] = useState(5);
   const [allOffers, setAllOffers] = useState([]); 
   const [filteredOffers, setFilteredOffers] = useState([]);
+  const [nextBookmark, setNextBookmark] = useState()
+  const [requestedBookmark, setRequestedBookmark] = useState()
 
   useEffect(() => {
     // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
@@ -13,20 +15,23 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         selector: {},
-        sort: [{ issued: "asc" }],
+        sort: [{ issued: "desc" }],
         limit: 100,
+        bookmark: requestedBookmark
       })
     })
       .then((response) => response.json())
       .then((data) => {
         const allDocs = data.docs; 
-        setAllOffers(allDocs); 
-        setFilteredOffers(allDocs); 
+        setAllOffers([...allOffers, ...allDocs]);
+        setNextBookmark(data.bookmark); 
+        setFilteredOffers((prev) => [...prev, ...allDocs]);
       })
       .catch((error) =>
         console.error("Erreur lors du chargement des données :", error)
       );
-  }, [id]);
+  }, [id,requestedBookmark]);
+
 
   useEffect(() => {
     if (isSearchClicked) {
@@ -55,11 +60,18 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
           <OfferCard key={index} doc={doc} />
         ))}
       </div>
-      {visibleOffers < filteredOffers.length && (
-        <button onClick={loadMoreOffers} className="load-more">
-          Voir plus d'offres
-        </button>
-      )}
+      {visibleOffers < filteredOffers.length && nextBookmark && (
+  <button 
+    onClick={() => {
+      setRequestedBookmark(nextBookmark); // Charge les offres suivantes
+      loadMoreOffers(); // Affiche 5 offres supplémentaires
+    }} 
+    className="load-more"
+  >
+    Voir plus d'offres
+  </button>
+)}
+
     </div>
   );
 }
