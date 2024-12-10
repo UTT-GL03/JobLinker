@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
-  const [visibleOffers, setVisibleOffers] = useState(5);
+  
   const [allOffers, setAllOffers] = useState([]); 
   const [filteredOffers, setFilteredOffers] = useState([]);
   const [nextBookmark, setNextBookmark] = useState()
@@ -16,7 +16,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       body: JSON.stringify({
         selector: {},
         sort: [{ issued: "desc" }],
-        limit: 100,
+        limit: 25,
         bookmark: requestedBookmark
       })
     })
@@ -33,6 +33,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   }, [id,requestedBookmark]);
 
 
+
   useEffect(() => {
     if (isSearchClicked) {
       const offers = allOffers.filter((doc) => {
@@ -42,29 +43,26 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
 
         return matchesSearchTerm && matchesContractType && matchesRegion;
       });
-      setFilteredOffers(offers); 
-      setVisibleOffers(5); 
+      setFilteredOffers(offers);  
       setIsSearchClicked(false); 
     }
   }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, allOffers]);
 
-  const loadMoreOffers = () => {
-    setVisibleOffers((prev) => prev + 5);
-  };
+
 
   return (
     <div>
       <h1>Offres</h1>
       <div className="offer-container">
-        {filteredOffers.slice(0, visibleOffers).map((doc, index) => (
+        {filteredOffers.map((doc, index) => (
           <OfferCard key={index} doc={doc} />
         ))}
       </div>
-      {visibleOffers < filteredOffers.length && nextBookmark && (
+      { nextBookmark && (
   <button 
     onClick={() => {
       setRequestedBookmark(nextBookmark); // Charge les offres suivantes
-      loadMoreOffers(); // Affiche 5 offres supplémentaires
+      //loadMoreOffers(); // Affiche 5 offres supplémentaires
     }} 
     className="load-more"
   >
