@@ -26,7 +26,7 @@ Enfin, ce choix s’inscrit dans une démarche globale de promotion des pratique
 
 ## Scénarios d'usage et impacts
 
-Nous faisons l'hypothèse que les utilisateurs visitent ces plateformes plusieurs fois par jour, par exemple pendant une pause déjeuner ou le soir, afin de découvrir les nouvelles opportunités d'emploi et de consulter celles qui nous intéressent. Ces visites peuvent durer quelques dizaines de minutes.
+Nous faisons l'hypothèse que les utilisateurs visitent ces plateformes une fois par jour, en début ou en fin de journée, afin de découvrir les nouvelles opportunités d'emploi et de consulter les détails de celles qui nous intéressent. Ces visites peuvent durer quelques dizaines de minutes.
 Nous choisissons délibérément de ne pas nous mettre dans la peau d'un recruteur, car nous n'avons pas une connaissance approfondie des fonctionnalités spécifiques auxquelles les recruteurs ont accès sur ces plateformes. Ce manque de visibilité nous conduit à privilégier une approche basée sur l'expérience du candidat, qui correspond à notre propre usage et compréhension des fonctionnalités.
 Pour cette raison, nous avons choisi de modéliser les scénarios suivants : l'un focalisé sur la recherche d'offres récentes, et l'autre sur l'exploration des offres qui nous intéressent.
 
@@ -40,7 +40,7 @@ Pour cette raison, nous avons choisi de modéliser les scénarios suivants : l'u
 ## Scénario 2 : "Exploration des offres intéressantes"
 
 1. L'utilisateur effectue à nouveau les étapes 1, 2 et 3 du scénario 1.
-2. Il consulte les offres personnalisés qui lui sont proposés en fonction de ces paramètres.
+2. Il consulte les offres personnalisées qui lui sont proposés en fonction de ces paramètres.
 3. Après avoir obtenu un aperçu des offres qui lui sont proposés, l'utilisateur clique sur le titre d'une offre qui l'intéresse.
 4. Il consulte les détails de l'offre.
 5. Il revient à la liste des recommandations pour poursuivre l'exploration.
