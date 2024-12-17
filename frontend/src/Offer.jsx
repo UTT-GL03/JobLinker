@@ -9,9 +9,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [requestedBookmark, setRequestedBookmark] = useState()
   const [hasMoreOffers, setHasMoreOffers] = useState(true)
 
-  useEffect(() => {
-    //mettre ça dans une nouvelle fonction et dans le useeffect t'appele cette fonction
-    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
+  const fetchOffers = (previousArticles) => {
     fetch("http://localhost:5984/database_joblinker_prot3/_find", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -44,23 +42,27 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       .catch((error) =>
         console.error("Erreur lors du chargement des données :", error)
       );
+  }    
+  
+  
+  useEffect(() => {
+    console.log({requestedBookmark});
+    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
+    fetchOffers(allOffers)
+
   }, [id,requestedBookmark]);
 
-
-
   useEffect(() => {
+    console.log({isSearchClicked});
     if (isSearchClicked) {
-      const offers = allOffers.filter((doc) => {   //enlever jusque
-        const matchesSearchTerm = doc.title?.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesContractType = contractType === "" || doc.type === contractType;
-        const matchesRegion = region === "" || doc.location === region;
-
-        return matchesSearchTerm && matchesContractType && matchesRegion;
-      });
-      setFilteredOffers(offers);  //la //ajouter l'appel a la future fonction que on vas faire avec un tab vide
+      setFilteredOffers([]); 
+      setAllOffers([]); 
+      setRequestedBookmark(undefined); 
+      fetchOffers([]); 
       setIsSearchClicked(false); 
+      
     }
-  }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, allOffers]);
+  }, [isSearchClicked, searchTerm, contractType, region, allOffers]);
 
 
 
