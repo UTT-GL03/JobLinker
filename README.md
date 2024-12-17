@@ -135,9 +135,14 @@ L'intérêt d'une source de données dynamique est également, à terme, de pouv
 
 Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
 En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 10 000 offres pour observer l'impact de ce passage à l'échelle, ce qui revient à multiplier par 100 la quantité d'offres précédente. 
+Pour le moment, nous continuons de charger toutes nos offres d'un coup, elles seront chargées 100 par 100 lors des séances d'amélioration.
 
 **Prise en compte du passage à l'échelle**
 
-Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir constaté que l'augmentation de la consommation greenFrame 
+![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
+![Resultats obtenus ajout 10000 offres](./images/evolution_2_conso_après_ajout_10000_offres.png)
+
+ 
+
 
 
