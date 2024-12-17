@@ -142,7 +142,7 @@ Pour le moment, nous continuons de charger toutes nos offres d'un coup, nous all
 Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de l'impact du processeur, et de l'impact du réseau.
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_add_10000_samples.png)
 
-Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par deux de l'impact global de notre prototype. 
+Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par 3 de l'impact global de notre prototype (passage de plus de 300mWh à moins de 100mWh). 
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
 ![Resultats obtenus ajout 10000 offres](./images/evolution_2_conso_après_ajout_10000_offres.png)
 
