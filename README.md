@@ -151,7 +151,7 @@ Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de 
 
 **Fig.6:** Diminution de la consommation suite au chargement des offres 100 par 100 - prototype 4
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
-**Fig.6:** Diminution de la consommation globale suite au chargement des offres 100 par 100 - prototype 4
+**Fig.7:** Diminution de la consommation globale suite au chargement des offres 100 par 100 - prototype 4
 
 Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par 3 de l'impact global de notre prototype (passage de plus de 300mWh à moins de 100mWh). 
  
