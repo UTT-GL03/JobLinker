@@ -30,9 +30,17 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       .then((response) => response.json())
       .then((data) => {
         const allDocs = data.docs; 
+
+        // Filtrage des résultats selon le terme recherché
+        const lowerSearchTerm = searchTerm.toLowerCase();
+        const matchingOffers = allDocs.filter((doc) =>
+          doc.title?.toLowerCase().includes(lowerSearchTerm)
+        );
+
         setAllOffers([...previousOffers, ...allDocs]);
+        setFilteredOffers((prev) => [...prev, ...matchingOffers]);
         setNextBookmark(data.bookmark); 
-        setFilteredOffers((prev) => [...prev, ...allDocs]);
+
 
         if (allDocs.length === 0) {
           setHasMoreOffers(false);
@@ -47,22 +55,21 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   
   useEffect(() => {
     console.log({requestedBookmark});
-    // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
     fetchOffers(allOffers)
 
-  }, [id,requestedBookmark]);
+  }, [requestedBookmark]);
 
   useEffect(() => {
-    console.log({isSearchClicked});
+    console.log({ isSearchClicked });
     if (isSearchClicked) {
-      setFilteredOffers([]); 
-      //setAllOffers([]); 
+      setFilteredOffers([]); // Réinitialise 
       setRequestedBookmark(undefined); 
-      fetchOffers([]); //tab vide = previous offers
+      fetchOffers([]); 
       setIsSearchClicked(false); 
-      
+      setHasMoreOffers(true);
     }
   }, [isSearchClicked, searchTerm, contractType, region, allOffers]);
+  
 
 
 
@@ -74,10 +81,12 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
           <OfferCard key={index} doc={doc} />
         ))}
       </div>
-      {nextBookmark && (
+      {nextBookmark && hasMoreOffers && (
   <button 
     onClick={() => {
-      setRequestedBookmark(nextBookmark); // Charge les offres suivantes
+      if (nextBookmark) {
+        setRequestedBookmark(nextBookmark); // Charge les offres suivantes
+      }
     }} 
     className="load-more"
   >
