@@ -7,8 +7,10 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [filteredOffers, setFilteredOffers] = useState([]);
   const [nextBookmark, setNextBookmark] = useState()
   const [requestedBookmark, setRequestedBookmark] = useState()
+  const [hasMoreOffers, setHasMoreOffers] = useState(true)
 
   useEffect(() => {
+    //mettre ça dans une nouvelle fonction et dans le useeffect t'appele cette fonction
     // fetch('http://localhost:5984/qvotidie/_all_docs?include_docs=true ')
     fetch("http://localhost:5984/database_joblinker_prot3/_find", {
       method: "POST",
@@ -23,7 +25,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
               issued: "desc"
             }
           ],
-          limit: 100,
+          limit: 25,
         bookmark: requestedBookmark
       })
     })
@@ -33,6 +35,11 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
         setAllOffers([...allOffers, ...allDocs]);
         setNextBookmark(data.bookmark); 
         setFilteredOffers((prev) => [...prev, ...allDocs]);
+
+        if (allDocs.length === 0) {
+          setHasMoreOffers(false);
+        }
+
       })
       .catch((error) =>
         console.error("Erreur lors du chargement des données :", error)
@@ -43,14 +50,14 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
 
   useEffect(() => {
     if (isSearchClicked) {
-      const offers = allOffers.filter((doc) => {
+      const offers = allOffers.filter((doc) => {   //enlever jusque
         const matchesSearchTerm = doc.title?.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesContractType = contractType === "" || doc.type === contractType;
         const matchesRegion = region === "" || doc.location === region;
 
         return matchesSearchTerm && matchesContractType && matchesRegion;
       });
-      setFilteredOffers(offers);  
+      setFilteredOffers(offers);  //la //ajouter l'appel a la future fonction que on vas faire avec un tab vide
       setIsSearchClicked(false); 
     }
   }, [isSearchClicked, searchTerm, contractType, region, setIsSearchClicked, allOffers]);
@@ -65,7 +72,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
           <OfferCard key={index} doc={doc} />
         ))}
       </div>
-      { nextBookmark && (
+      {nextBookmark && (
   <button 
     onClick={() => {
       setRequestedBookmark(nextBookmark); // Charge les offres suivantes

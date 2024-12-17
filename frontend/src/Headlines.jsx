@@ -25,6 +25,7 @@ function Headlines({ searchTerm, setSearchTerm, contractType, setContractType, r
 
   const handleSearch = (e) => {
     e.preventDefault();
+    console.log(e);
     onSearchClick(); // Appel de la fonction pour déclencher le filtrage
   };
 
