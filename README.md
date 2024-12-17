@@ -123,7 +123,10 @@ Pour la troisième version du prototype, les données sont désormais stockées 
 Voici les résulats que nous avons obtenus cette fois-ci :
 
 - ![Resultats obtenus](./images/images_prototype3/evolution_consommation_prot3.png)
+  
+**Fig.3:** Evolution de la consommation - prototype 3
 - ![Resultats obtenus](./images/images_prototype3/update_sample_data.png)
+**Fig.4:** Details de l'évolution - prototype 3
 
 Nos mesures nous permettent de constater de bien meilleurs résultats que lors de notre précédent prototype, avec notamment une baisse importante de la charge du réseau (de 65% à 4%) entre les deux prototypes. L'utilisation d'une base donnée et la supression d'une partie du fichier sample_data.json (supression des profils utilisateurs qui n'étaient pas utilisés) peuvent expliquer ce constat, confirmant l'hypothèse émise lors des mesures d'impact de notre prototype n°2. 
 
@@ -135,9 +138,36 @@ L'intérêt d'une source de données dynamique est également, à terme, de pouv
 
 Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
 En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 10 000 offres pour observer l'impact de ce passage à l'échelle, ce qui revient à multiplier par 100 la quantité d'offres précédente. 
+Pour le moment, nous continuons de charger toutes nos offres d'un coup, nous allons donc les charger 100 par 100 pour contre-balancer la forte augmentation du nombre d'offres dû au passage à l'échelle.
 
 **Prise en compte du passage à l'échelle**
 
-Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir constaté que l'augmentation de la consommation greenFrame 
+![Resultats obtenus ajout 10000 offres](./images/comparaison_add_10000_samples.png)
+**Fig.5:** Augmentation de la consommation globale suite au passage à l'échelle - prototype 4
+
+Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de l'impact du processeur, et de l'impact du réseau.
+
+
+![Resultats obtenus ajout 10000 offres](./images/evolution_2_conso_après_ajout_10000_offres.png)
+
+**Fig.6:** Diminution de la consommation suite au chargement des offres 100 par 100 - prototype 4
+![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
+**Fig.7:** Diminution de la consommation globale suite au chargement des offres 100 par 100 - prototype 4
+
+Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par 3 de l'impact global de notre prototype (passage de plus de 300mWh à moins de 100mWh). 
+
+
+ 
+## Amélioration du prototype 4
+
+Comme expliqué plus haut, nous avions prévu d'effectuer la déportation sur le serveur du filtrage des données durant les sessions dédiées à l'amélioration de notre prototype. C'est effectivement ce que nous avons fait, cependant, nous avons déporté côté serveur uniquement le filtrage en fonction du lieu et du type de contrat souhaités, et conservé le filtrage en fonction des mots clés côté client pour continuer à pouvoir chercher un mot clé dans les titres des offres sans que ce dernier soit le premier mot du titre. 
+
+
+ 
+
+
+
+
+
 
 
