@@ -138,6 +138,7 @@ En supposant que notre application soit un succès, le nombre d'offres sera forc
 Pour le moment, nous continuons de charger toutes nos offres d'un coup, nous allons donc les charger 100 par 100 pour contre-balancer la forte augmentation du nombre d'offres dû au passage à l'échelle.
 
 **Prise en compte du passage à l'échelle**
+
 Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de l'impact du processeur, et de l'impact du réseau.
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_add_10000_samples.png)
 
