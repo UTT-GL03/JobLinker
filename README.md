@@ -123,6 +123,7 @@ Pour la troisième version du prototype, les données sont désormais stockées 
 Voici les résulats que nous avons obtenus cette fois-ci :
 
 - ![Resultats obtenus](./images/images_prototype3/evolution_consommation_prot3.png)
+  
 **Fig.3:** Evolution de la consommation - prototype 3
 - ![Resultats obtenus](./images/images_prototype3/update_sample_data.png)
 **Fig.4:** Details de l'évolution - prototype 3
