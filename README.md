@@ -148,6 +148,7 @@ Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de 
 
 
 ![Resultats obtenus ajout 10000 offres](./images/evolution_2_conso_après_ajout_10000_offres.png)
+
 **Fig.6:** Diminution de la consommation suite au chargement des offres 100 par 100 - prototype 4
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
 **Fig.6:** Diminution de la consommation globale suite au chargement des offres 100 par 100 - prototype 4
