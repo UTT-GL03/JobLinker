@@ -9,7 +9,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
   const [requestedBookmark, setRequestedBookmark] = useState()
   const [hasMoreOffers, setHasMoreOffers] = useState(true)
 
-  const fetchOffers = (previousArticles) => {
+  const fetchOffers = (previousOffers) => {
     fetch("http://localhost:5984/database_joblinker_prot3/_find", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -30,7 +30,7 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
       .then((response) => response.json())
       .then((data) => {
         const allDocs = data.docs; 
-        setAllOffers([...allOffers, ...allDocs]);
+        setAllOffers([...previousOffers, ...allDocs]);
         setNextBookmark(data.bookmark); 
         setFilteredOffers((prev) => [...prev, ...allDocs]);
 
@@ -56,9 +56,9 @@ function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchC
     console.log({isSearchClicked});
     if (isSearchClicked) {
       setFilteredOffers([]); 
-      setAllOffers([]); 
+      //setAllOffers([]); 
       setRequestedBookmark(undefined); 
-      fetchOffers([]); 
+      fetchOffers([]); //tab vide = previous offers
       setIsSearchClicked(false); 
       
     }
