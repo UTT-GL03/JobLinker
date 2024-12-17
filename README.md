@@ -155,7 +155,19 @@ Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de 
 **Fig.7:** Diminution de la consommation globale suite au chargement des offres 100 par 100 - prototype 4
 
 Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par 3 de l'impact global de notre prototype (passage de plus de 300mWh à moins de 100mWh). 
+
+
  
+## Amélioration du prototype 4
+
+Comme expliqué plus haut, nous avions prévu d'effectuer la déportation sur le serveur du filtrage des données durant les sessions dédiées à l'amélioration de notre prototype. C'est effectivement ce que nous avons fait, cependant, nous avons déporté côté serveur uniquement le filtrage en fonction du lieu et du type de contrat souhaités, et conservé le filtrage en fonction des mots clés côté client pour continuer à pouvoir chercher un mot clé dans les titres des offres sans que ce dernier soit le premier mot du titre. 
+
+
+ 
+
+
+
+
 
 
 
