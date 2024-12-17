@@ -118,11 +118,16 @@ Nous constatons un niveau de solicitation du réseau assez élevé, qui explique
 
 ## Prototype n°3 : Fonctionnalités pour le scénario prioritaire avec données stockées dans une base de données
 
-Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (CouchDB). L'intérêt d'une source de données dynamique est d'une part, à terme, de pouvoir ajouter ou modifier des offres plus facilement, et d'autre part de déporter sur le serveur le filtrage des données pertinentes.
+Pour la troisième version du prototype, les données sont désormais stockées dans un système de base de données interrogeable à travers une API Web (CouchDB). Pour rappel, lors de la conception de notre prototype n°2, nous avions émis l'hypothèse qu'utiliser une source de donnée dynamique et une base de données pourrait nous permettre de diminuer la quantité de réseau utilisée, qui était relativement haute. 
+
+Voici les résulats que nous avons obtenus cette fois-ci :
+
 - ![Resultats obtenus](./images/images_prototype3/evolution_consommation_prot3.png)
 - ![Resultats obtenus](./images/images_prototype3/update_sample_data.png)
 
 Nos mesures nous permettent de constater de bien meilleurs résultats que lors de notre précédent prototype, avec notamment une baisse importante de la charge du réseau (de 65% à 4%) entre les deux prototypes. L'utilisation d'une base donnée et la supression d'une partie du fichier sample_data.json (supression des profils utilisateurs qui n'étaient pas utilisés) peuvent expliquer ce constat, confirmant l'hypothèse émise lors des mesures d'impact de notre prototype n°2. 
+
+L'intérêt d'une source de données dynamique est également, à terme, de pouvoir ajouter ou modifier des offres plus facilement, et de déporter sur le serveur le filtrage des données pertinentes. Dans ce prototype, le filtrage des données continue à se faire côté client. La déportation sur le serveur du filtrage des données sera effectué durant les sessions dédiées à l'amélioration de notre prototype.
 
 ## Prototype n°4 : Fonctionnalités pour le scénario prioritaire avec filtrage des données
 
@@ -133,6 +138,6 @@ En supposant que notre application soit un succès, le nombre d'offres sera forc
 
 **Prise en compte du passage à l'échelle**
 
-Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir cvonstaté que l'augmentation de la consommation greenFrame 
+Nous continuons à charger toutes nos offres d'un coup, afin de permettre d'effetuer des recherches parmi les offres disponibles. Nous avons fait ce choix de conception après avoir constaté que l'augmentation de la consommation greenFrame 
 
 
