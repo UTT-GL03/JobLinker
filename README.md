@@ -135,10 +135,13 @@ L'intérêt d'une source de données dynamique est également, à terme, de pouv
 
 Nous savons déjà que les données pourraient se multiplier en ajoutant des profils utilisateurs. En effet, on a vu l'impact qu'a eu la suppression de nos milliers de profils entre le prototype 2 et le prototype 3, étape durant laquelle nous avons décidé de supprimer le concept de compte utilisateur pour des problèmes liés à l'authentification. 
 En supposant que notre application soit un succès, le nombre d'offres sera forcément amené à augmenter avec le temps. Jusqu'ici, on générait entre 100 et 500 offres. Afin de tendre vers un échantillon de données plus réaliste, nous allons maintenant générer 10 000 offres pour observer l'impact de ce passage à l'échelle, ce qui revient à multiplier par 100 la quantité d'offres précédente. 
-Pour le moment, nous continuons de charger toutes nos offres d'un coup, elles seront chargées 100 par 100 lors des séances d'amélioration.
+Pour le moment, nous continuons de charger toutes nos offres d'un coup, nous allons donc les charger 100 par 100 pour contre-balancer la forte augmentation du nombre d'offres dû au passage à l'échelle.
 
 **Prise en compte du passage à l'échelle**
+Après avoir ajouter nos 10 000 offres, on observe, une multiplication par 2 de l'impact du processeur, et de l'impact du réseau.
+![Resultats obtenus ajout 10000 offres](./images/comparaison_add_10000_samples.png)
 
+Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un effet bénéfique, avec une division par deux de l'impact global de notre prototype. 
 ![Resultats obtenus ajout 10000 offres](./images/comparaison_2_add_10000_samples.png)
 ![Resultats obtenus ajout 10000 offres](./images/evolution_2_conso_après_ajout_10000_offres.png)
 
