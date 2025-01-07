@@ -165,21 +165,9 @@ Comme expliqué plus haut, nous avions prévu d'effectuer la déportation sur le
 
 ## Bilan 
 
-Nous arrivons à la fin de ce projet, c'est pourquoi nous proposons dans cette dernière section de dresser un bilan portant sur l'ensemble de notre travail : retrospective sur le résultat, le processus et les enseignements à en tirer. 
+Nous arrivons à la fin de ce projet, c'est pourquoi nous proposons dans cette dernière section de dresser un bilan portant sur l'ensemble de notre travail : retrospective sur le résultat, le processus et les enseignements à en tirer.
+L'objectif initial a été atteint : nous avons développé une application fonctionnelle, centrée sur les fonctionnalités indispensables et ayant un impact environnemental réduit. Malheureusement, nous n’avons pu utiliser GreenFrame que sur notre application, et pas sur celles de nos concurrents à cause de problèmes d'authentification (login, password requis). Mais nous pouvons quand même se baser sur les lettres obtenues via l’outil GreenIT pour l’affirmer. En effet, LinkedIn obtenait en moyenne la lettre G, JobTeaser obtenait en moyenne la lettre D/E, là où notre projet obtient en moyenne la lettre A. Toutefois, notre prototype reste à un état minimal et pourrait bénéficier de futures itérations pour le rendre plus robuste, scalable et adapté à un usage réel. Les contraintes de temps nous ont conduits à nous concentrer sur quatre prototypes clés, présentés dans les sections précédentes.
 
-L'objectif initial a été atteint : nous avons développé une application fonctionnelle, centrée sur les fonctionnalités indispensables et ayant un impact environnemental réduit. Toutefois, notre prototype reste à un état minimal et pourrait bénéficier de futures itérations pour le rendre plus robuste, scalable et adapté à un usage réel. Les contraintes de temps nous ont conduits à nous concentrer sur quatre prototypes clés, présentés dans les sections précédentes.  
-
-Ce projet nous a permis d'acquérir des enseignements précieux. 
-Contrairement à nos attentes, le CPU ne consomme pas autant que prévu, tandis que l'usage d'une base de données peut considérablement réduire l'impact écologique. Dans notre cas, l'utilisation d'une base de données nous a permis de diviser par 3 notre consommation globale (en mWh). De plus, le réseau et l'écran se révèlent être les principaux facteurs de consommation énergétique, avec une surprise notable concernant l'écran, qui représente environ 90% de notre consommation, une fois notre projet terminé. Cela nous offre une nouvelle perspective : peut-être qu'une application écoresponsable est avant tout une application conçue pour un usage mesuré et ponctuel, évitant toute utilisation abusive. Le filtrage des données et la pagination ont également contribué de manière significative à la réduction de l'empreinte écologique de notre application. Ce projet illustre l'importance d'une démarche de développement responsable et constitue une base solide pour des initiatives futures en faveur de la sobriété numérique.  
-
-A titre personnel, nous avons beaucoup appris durant ce projet, et tenons à remercier notre professeur, Aurélien Benel, pour son encadrement et son aide tout au long du déroulement de ce projet. 
-
-
- 
-
-
-
-
-
-
+Contrairement à nos attentes, le CPU ne consomme pas autant que prévu, tandis que l'usage d'une base de données peut considérablement réduire l'impact écologique. Plus précisément, l’utilisation d’une base de données nous a permis d’effectuer un filtrage efficace grâce à des index, et d’avoir recours à de la pagination. Dans notre cas, cela nous a permis de diviser par 3 notre consommation globale (en mWh). De plus, le réseau et l'écran se révèlent être les principaux facteurs de consommation énergétique, avec une surprise notable concernant l'écran, qui représente environ 90% de notre consommation, une fois notre projet terminé. Cela nous offre une nouvelle perspective : peut-être qu'une application écoresponsable est avant tout une application conçue pour un usage ponctuel et des sessions d’usages courtes, évitant toute utilisation abusive.. Cette perspective remet en cause l’économie de l’attention telle qu’on la connaît aujourd’hui. Nous vivons dans une société où les individus sont constamment sollicités par des contenus, des publicités, des notifications et des médias numériques et où l'attention devient un enjeu central pour les entreprises, les plateformes en ligne et les créateurs de contenu.
+Ce projet illustre l'importance d'une démarche de développement responsable et constitue une base solide pour des initiatives futures en faveur de la sobriété numérique. A titre personnel, ce travail nous permettra d’être plus sensible à l’impact écologique des applications que nous aurons à développer dans le cadre de notre futur métier et de proposer des solutions concrètes à la problématique de la sobriété numérique. 
 
