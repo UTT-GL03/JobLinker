@@ -163,6 +163,18 @@ Nous pouvons constater ici que le chargement des offres 100 par 100 a bien eu un
 Comme expliqué plus haut, nous avions prévu d'effectuer la déportation sur le serveur du filtrage des données durant les sessions dédiées à l'amélioration de notre prototype. C'est effectivement ce que nous avons fait, cependant, nous avons déporté côté serveur uniquement le filtrage en fonction du lieu et du type de contrat souhaités, et conservé le filtrage en fonction des mots clés côté client pour continuer à pouvoir chercher un mot clé dans les titres des offres sans que ce dernier soit le premier mot du titre. 
 
 
+## Bilan 
+
+Nous arrivons à la fin de ce projet, c'est pourquoi nous proposons dans cette dernière section de dresser un bilan portant sur l'ensemble de notre travail : retrospective sur le résultat, le processus et les enseignements à en tirer. 
+
+L'objectif initial a été atteint : nous avons développé une application fonctionnelle, centrée sur les fonctionnalités indispensables et ayant un impact environnemental réduit. Toutefois, notre prototype reste à un état minimal et pourrait bénéficier de futures itérations pour le rendre plus robuste, scalable et adapté à un usage réel. Les contraintes de temps nous ont conduits à nous concentrer sur quatre prototypes clés, présentés dans les sections précédentes.  
+
+Ce projet nous a permis d'acquérir des enseignements précieux. 
+Contrairement à nos attentes, le CPU ne consomme pas autant que prévu, tandis que l'usage d'une base de données peut considérablement réduire l'impact écologique. Dans notre cas, l'utilisation d'une base de données nous a permis de diviser par 3 notre consommation globale (en mWh). De plus, le réseau et l'écran se révèlent être les principaux facteurs de consommation énergétique, avec une surprise notable concernant l'écran, qui représente environ 90% de notre consommation, une fois notre projet terminé. Cela nous offre une nouvelle perspective : peut-être qu'une application écoresponsable est avant tout une application conçue pour un usage mesuré et ponctuel, évitant toute utilisation abusive. Le filtrage des données et la pagination ont également contribué de manière significative à la réduction de l'empreinte écologique de notre application. Ce projet illustre l'importance d'une démarche de développement responsable et constitue une base solide pour des initiatives futures en faveur de la sobriété numérique.  
+
+A titre personnel, nous avons beaucoup appris durant ce projet, et tenons à remercier notre professeur, Aurélien Benel, pour son encadrement et son aide tout au long du déroulement de ce projet. 
+
+
  
 
 
