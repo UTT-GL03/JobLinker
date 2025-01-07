@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked, id }) {
+function Offer({ searchTerm, contractType, region, isSearchClicked, setIsSearchClicked}) {
   
   const [allOffers, setAllOffers] = useState([]); 
   const [filteredOffers, setFilteredOffers] = useState([]);
